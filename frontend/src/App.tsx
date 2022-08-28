@@ -1,13 +1,21 @@
-import React from "react";
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
-//components
+const App: FC = () => {
+  const { t, i18n } = useTranslation();
 
-function App() {
+  const handleChange = (lng: string) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("lng", lng);
+  };
+
   return (
     <>
-      <p>Hello</p>
+      <h1>{t("hello")}</h1>
+      <button onClick={() => handleChange("en")}>English</button>
+      <button onClick={() => handleChange("fr")}>Français</button>
     </>
   );
-}
+};
 
 export default App;
