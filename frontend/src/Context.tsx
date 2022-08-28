@@ -3,7 +3,7 @@ import usePreferenceReducer from "./usePreferenceReducer";
 import { UserActionKind, IContext } from "./usePreferenceReducer";
 
 const initialState: IContext = {
-  language: "fr",
+  language: localStorage.getItem("lng") || "fr",
 };
 
 type Action = {

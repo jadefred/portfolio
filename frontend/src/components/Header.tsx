@@ -1,21 +1,14 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
+import usePreferenceStatus from "../Context";
 
 const Header: FC = () => {
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState<string>("fr");
+  const { language, changeLanguage } = usePreferenceStatus();
 
-  //set state as langauge saved in LS if it is not null
-  useEffect(() => {
-    const storedLang = localStorage.getItem("lng");
-    if (storedLang) {
-      setLanguage(storedLang);
-    }
-  }, []);
-
-  //change language choice, setState and update local storage
+  //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
-    setLanguage(lang);
+    changeLanguage(lang);
     i18n.changeLanguage(lang);
     localStorage.setItem("lng", lang);
   };
