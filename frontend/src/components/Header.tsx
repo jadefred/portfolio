@@ -22,12 +22,21 @@ const Header: FC = () => {
 
   return (
     <div>
-      <label htmlFor="lang-select">{t("language")} :</label>
-      <select name="lang-select" value={language} onChange={(event) => handleLanguageChange(event.target.value)}>
-        <option value="fr">Français</option>
-        <option value="en">English</option>
-        <option value="zh">繁體中文</option>
-      </select>
+      <div>
+        <p>{t("projects")}</p>
+      </div>
+      <div>
+        <p>{t("skills")}</p>
+      </div>
+
+      {/* language select */}
+      <div>
+        <label htmlFor="lang-select">{t("language")} : </label>
+        <select name="lang-select" value={language} onChange={(event) => handleLanguageChange(event.target.value)}>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+      </div>
     </div>
   );
 };

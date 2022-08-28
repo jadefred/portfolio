@@ -1,4 +1,6 @@
 {
   "hello": "Bonjour",
-  "language": "Langue"
+  "language": "Langue",
+  "projects": "Projets",
+  "skills": "Compétences"
 }

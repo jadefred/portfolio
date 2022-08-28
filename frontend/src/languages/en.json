@@ -1,4 +1,6 @@
 {
   "hello": "Hello",
-  "language": "Language"
+  "language": "Language",
+  "projects": "Projects",
+  "skills": "Skills"
 }
