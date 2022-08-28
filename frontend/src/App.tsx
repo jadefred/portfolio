@@ -6,13 +6,13 @@ import Header from "./components/Header";
 
 const App: FC = () => {
   console.log("app rendered");
-  
+
   const { t } = useTranslation();
 
   return (
     <>
       <Header />
-      <h1>{t("hello")}</h1>
+      <h1>{t("intro")}</h1>
     </>
   );
 };

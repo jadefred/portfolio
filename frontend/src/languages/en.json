@@ -1,6 +1,8 @@
 {
   "hello": "Hello",
   "language": "Language",
+  "home": "Home",
   "projects": "Projects",
-  "skills": "Skills"
+  "skills": "Skills",
+  "intro": "Hi, I am Jade. A web developer based in France, I am fascinated by internet and the latest technologies"
 }

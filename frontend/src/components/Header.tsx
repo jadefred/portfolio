@@ -21,7 +21,10 @@ const Header: FC = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-y-4 items-center sm:flex-row sm: gap-x-6 sm:justify-end">
+      <div>
+        <p>{t("home")}</p>
+      </div>
       <div>
         <p>{t("projects")}</p>
       </div>
