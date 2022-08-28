@@ -1,5 +1,5 @@
-interface IContext {
-  lang: string;
+export interface IContext {
+  language: string;
 }
 
 // An enum with all the types of actions to use in our reducer
@@ -20,7 +20,7 @@ const userReducer = (state: IContext, action: UserAction) => {
     case UserActionKind.CHANGELANGUAGE:
       return {
         ...state,
-        lang: payload.lang,
+        language: payload.language,
       };
 
     default:
