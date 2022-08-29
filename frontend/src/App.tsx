@@ -10,7 +10,7 @@ const App: FC = () => {
 
   return (
     <div className="relative">
-      <h1 className="text-center text-5xl my-8">Jade Fredenucci</h1>
+      
       <Header />
       <SideBar />
       <Intro />
