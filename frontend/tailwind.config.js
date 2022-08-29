@@ -8,6 +8,13 @@ module.exports = {
       lg: "1024px",
       xl: "1200px",
     },
+    fontFamily: {
+      'sans': ['Raleway', 'system-ui'],
+      // 'serif': ['ui-serif', 'Georgia'],
+      // 'mono': ['ui-monospace', 'SFMono-Regular'],
+      'display': ['Cormorant Garamond'],
+      // 'body': ['"Open Sans"'],
+    },
     extend: {
       colors: {
         bgColor: "#fffcf2"

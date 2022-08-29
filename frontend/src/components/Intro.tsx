@@ -9,43 +9,43 @@ const Intro: FC = () => {
 
   return (
     <>
-      <h2>{t("greeting")}</h2>
+      <div>
+        <h2 className="font-display text-4xl font-bold">{t("greeting")}</h2>
 
-      {/* typing animation - change display language according to context */}
-      {language === "fr" && (
-        <TypeAnimation
-          sequence={[
-            "Une",
-            1000,
-            "Une développeuse",
-            1000,
-            "Une développeuse web",
-            1000,
-            "Une développeuse",
-            1000,
-            "Une",
-            1000,
-            "",
-            500,
-          ]}
-          wrapper="div"
-          cursor={true}
-          repeat={Infinity}
-          style={{ fontSize: "2em" }}
-        />
-      )}
+        {/* typing animation - change display language according to context */}
+        {language === "fr" && (
+          <TypeAnimation
+            sequence={[
+              "Une",
+              1000,
+              "Une développeuse",
+              1000,
+              "Une développeuse web",
+              1000,
+              "Une développeuse",
+              1000,
+              "Une développeuse web",
+              1000,
+            ]}
+            wrapper="div"
+            cursor={true}
+            repeat={3}
+            style={{ fontSize: "2em", fontFamily: "Raleway", fontWeight: 200, fontStyle: "italic" }}
+          />
+        )}
 
-      {language === "en" && (
-        <TypeAnimation
-          sequence={["A", 1000, "A web", 1000, "A web developer", 1000, "A web", 1000, "A", 1000, "", 500]}
-          wrapper="div"
-          cursor={true}
-          repeat={Infinity}
-          style={{ fontSize: "2em" }}
-        />
-      )}
+        {language === "en" && (
+          <TypeAnimation
+            sequence={["A", 1000, "A web", 1000, "A web developer", 1000, "A web", 1000, "A web developer", 1000]}
+            wrapper="div"
+            cursor={true}
+            repeat={3}
+            style={{ fontSize: "2em", fontFamily: "Raleway", fontWeight: 200, fontStyle: "italic" }}
+          />
+        )}
 
-      <h2>{t("intro")}</h2>
+        <p className="text-3xl font-display">{t("intro")}</p>
+      </div>
     </>
   );
 };
