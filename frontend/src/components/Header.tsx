@@ -9,7 +9,7 @@ import HamburgerMenu from "./HamburgerMenu";
 const Header: FC = () => {
   const { t, i18n } = useTranslation();
   const { language, changeLanguage } = usePreferenceStatus();
-  const isMobile = useMediaQuery({ query: "(max-width: 400px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 468px)" });
 
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
@@ -19,8 +19,8 @@ const Header: FC = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center text-5xl my-8">Jade Fredenucci</h1>
+    <div className="flex items-center justify-between sm:flex-col">
+      <h1 className="text-center text-3xl sm:text-5xl sm:my-8">Jade Fredenucci</h1>
       {isMobile && <HamburgerMenu handleLanguageChange={handleLanguageChange} />}
 
       {!isMobile && (

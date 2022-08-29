@@ -9,15 +9,12 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      'sans': ['Raleway', 'system-ui'],
-      // 'serif': ['ui-serif', 'Georgia'],
-      // 'mono': ['ui-monospace', 'SFMono-Regular'],
-      'display': ['Cormorant Garamond'],
-      // 'body': ['"Open Sans"'],
+      sans: ["Raleway", "system-ui"],
+      display: ["Cormorant Garamond"],
     },
     extend: {
       colors: {
-        bgColor: "#fffcf2"
+        bgColor: "#fffcf2",
       },
     },
   },
