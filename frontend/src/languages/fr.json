@@ -1,8 +1,8 @@
 {
   "hello": "Bonjour",
-  "language": "Langue",
-  "home": "Accueil",
-  "projects": "Projets",
-  "skills": "Compétences",
+  "language": "LANGUE",
+  "home": "ACCUEIL",
+  "projects": "PROJETS",
+  "skills": "COMPÉTENCES",
   "intro": "Bonjour, je suis Jade. Une développeuse web basée en France, je suis passionnée par Internet et les dernières technologies"
 }

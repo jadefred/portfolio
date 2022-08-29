@@ -4,7 +4,7 @@ import linkedinLogo from "../assets/linkedin-logo.svg";
 
 const SideBar: FC = () => {
   return (
-    <div>
+    <div className="fixed bottom-1/4 left-2">
       <a href="https://github.com/jadefred">
         <img src={githubLogo} alt="logo of the github" className="w-8" />
       </a>

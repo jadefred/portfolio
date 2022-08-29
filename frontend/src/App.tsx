@@ -11,12 +11,12 @@ const App: FC = () => {
   console.log("app rendered");
 
   return (
-    <>
-      <h1 className="text-center text-5xl">Jade Fredenucci</h1>
+    <div className="relative">
+      <h1 className="text-center text-5xl my-8">Jade Fredenucci</h1>
       <Header />
       <SideBar />
       <h2>{t("intro")}</h2>
-    </>
+    </div>
   );
 };
 

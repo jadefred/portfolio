@@ -28,9 +28,9 @@ const Header: FC = () => {
       {/* language select */}
       <div>
         <label htmlFor="lang-select">{t("language")} : </label>
-        <select name="lang-select" value={language} onChange={(event) => handleLanguageChange(event.target.value)}>
-          <option value="fr">Français</option>
-          <option value="en">English</option>
+        <select name="lang-select" value={language} onChange={(event) => handleLanguageChange(event.target.value)} className="border border-black bg-bgColor">
+          <option value="fr">FRANÇAIS</option>
+          <option value="en">ENGLISH</option>
         </select>
       </div>
     </div>
