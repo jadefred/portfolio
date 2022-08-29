@@ -1,6 +1,6 @@
 import { FC } from "react";
-import githubLogo from "../assets/github-logo.svg";
-import linkedinLogo from "../assets/linkedin-logo.svg";
+import githubLogo from "../assets/images/github-logo.svg";
+import linkedinLogo from "../assets/images/linkedin-logo.svg";
 
 const SideBar: FC = () => {
   return (
