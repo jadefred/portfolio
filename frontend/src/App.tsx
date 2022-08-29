@@ -12,9 +12,10 @@ const App: FC = () => {
 
   return (
     <>
+      <h1 className="text-center text-5xl">Jade Fredenucci</h1>
       <Header />
       <SideBar />
-      <h1>{t("intro")}</h1>
+      <h2>{t("intro")}</h2>
     </>
   );
 };
