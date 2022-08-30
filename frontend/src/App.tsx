@@ -2,7 +2,6 @@ import { FC } from "react";
 
 //components
 import Header from "./components/Header";
-import SideBar from "./components/SideBar";
 import Intro from "./components/Intro";
 
 const App: FC = () => {
@@ -12,7 +11,6 @@ const App: FC = () => {
     <div className="relative">
       
       <Header />
-      <SideBar />
       <Intro />
     </div>
   );

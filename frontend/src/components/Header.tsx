@@ -12,7 +12,6 @@ const Header: FC = () => {
     <div className="flex items-center justify-between md:flex-col">
       <h1 className="text-center text-3xl md:text-5xl md:my-8">Jade Fredenucci</h1>
       {isMobile && <HamburgerMenu />}
-
       {!isMobile && <Menu />}
     </div>
   );

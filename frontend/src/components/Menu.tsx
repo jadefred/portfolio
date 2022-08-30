@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
+import SideBar from "./SideBar";
 
 const Menu: FC = () => {
   const { t, i18n } = useTranslation();
@@ -14,7 +15,7 @@ const Menu: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-y-5 md:flex-row md:gap-x-10">
+    <div className="flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row md:gap-x-10 relative">
       <div>
         <p>{t("home")}</p>
       </div>
@@ -38,6 +39,7 @@ const Menu: FC = () => {
           <option value="en">ENGLISH</option>
         </select>
       </div>
+      <SideBar />
     </div>
   );
 };
