@@ -14,7 +14,7 @@ const Menu: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-y-5">
+    <div className="flex flex-col items-center gap-y-5 md:flex-row md:gap-x-10">
       <div>
         <p>{t("home")}</p>
       </div>
