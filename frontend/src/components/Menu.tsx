@@ -33,7 +33,7 @@ const Menu: FC = () => {
           name="lang-select"
           value={language}
           onChange={(event) => handleLanguageChange(event.target.value)}
-          className="border border-black bg-bgColor"
+          className="cursor-pointer border border-black rounded-sm bg-transparent px-3 "
         >
           <option value="fr">FRANÇAIS</option>
           <option value="en">ENGLISH</option>

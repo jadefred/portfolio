@@ -10,7 +10,7 @@ const Intro: FC = () => {
 
   return (
     <>
-      <div className="flex flex-col-reverse">
+      <div className="flex flex-col-reverse my-6 gap-y-8 md:flex-row md:items-center md:my-12">
         <div>
           <h2 className="font-display text-4xl">{t("greeting")}</h2>
           {/* typing animation - change display language according to context */}
@@ -50,8 +50,8 @@ const Intro: FC = () => {
           <p className="text-3xl font-display">{t("intro")}</p>
         </div>
 
-        <div>
-          <img src={workingImage} alt="illustration of a working girl" />
+        <div className="flex justify-center">
+          <img src={workingImage} alt="illustration of a working girl" className="w-11/12" />
         </div>
       </div>
     </>

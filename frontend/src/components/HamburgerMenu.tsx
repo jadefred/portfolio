@@ -8,13 +8,13 @@ const HamburgerMenu: FC = () => {
 
   return (
     <>
-      <Hamburger toggled={isOpen} toggle={setOpen} />
+      <Hamburger toggled={isOpen} toggle={setOpen} size={26}/>
 
       {isOpen && (
         <div className="modal">
           <div className="overlay flex justify-end">
-            <div>
-              <Hamburger toggled={isOpen} toggle={setOpen} />
+            <div className="mt-3 pr-5">
+              <Hamburger toggled={isOpen} toggle={setOpen} size={26} />
             </div>
           </div>
 

@@ -8,11 +8,12 @@ const App: FC = () => {
   console.log("app rendered");
 
   return (
-    <div className="relative">
-      
+    <>
       <Header />
-      <Intro />
-    </div>
+      <div className="w-10/12 mx-auto">
+        <Intro />
+      </div>
+    </>
   );
 };
 
