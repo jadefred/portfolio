@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Booki",
+    "skills": ["HTML", "CSS"],
+    "url": "https://jadefred.github.io/OpenClassrooms_P2_Booki/",
+    "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  },
+  {
+    "name": "ohmyfood",
+    "skills": ["HTML", "CSS", "SCSS"],
+    "url": "https://jadefred.github.io/PuiYuFredenucci_3_13032022/",
+    "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  },
+  {
+    "name": "Piiquante",
+    "skills": ["NodeJS", "Express", "MongoDB"],
+    "url": "",
+    "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  },
+  {
+    "name": "Tic Tac Toe",
+    "skills": ["React", "TypeScript"],
+    "url": "https://jadefred.github.io/typescript_react_tic_tac_toe/",
+    "code": "https://github.com/jadefred/typescript_react_tic_tac_toe",
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  },
+  {
+    "name": "Kanap",
+    "skills": ["React", "TypeScript", "Redux"],
+    "url": "",
+    "code": "https://github.com/jadefred/react_recreate_Kanap",
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  },
+  {
+    "name": "Groupomania",
+    "skills": ["React", "TypeScript", "NodeJS", "Express", "TailwindCSS", "PostgreSQL"],
+    "url": "",
+    "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  }
+]
