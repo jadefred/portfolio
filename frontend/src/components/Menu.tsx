@@ -17,13 +17,13 @@ const Menu: FC = () => {
   return (
     <div className="flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row md:gap-x-10 relative">
       <div>
-        <p>{t("home")}</p>
+        <p>{t("home").toUpperCase()}</p>
       </div>
       <div>
-        <p>{t("projects")}</p>
+        <p>{t("projects").toUpperCase()}</p>
       </div>
       <div>
-        <p>{t("skills")}</p>
+        <p>{t("skills").toUpperCase()}</p>
       </div>
 
       {/* language select */}

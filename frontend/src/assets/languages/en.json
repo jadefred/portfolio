@@ -1,8 +1,8 @@
 {
-  "language": "LANGUAGE",
-  "home": "HOME",
-  "projects": "PROJECTS",
-  "skills": "SKILLS",
+  "language": "Language",
+  "home": "Home",
+  "projects": "Projects",
+  "skills": "Skills",
   "intro": "based in France, I am fascinated by internet and the latest technologies",
   "greeting": "Hi ! I am Jade."
 }

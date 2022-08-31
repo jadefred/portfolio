@@ -1,8 +1,8 @@
 {
-  "language": "LANGUE",
-  "home": "ACCUEIL",
-  "projects": "PROJETS",
-  "skills": "COMPÉTENCES",
+  "language": "Langue",
+  "home": "Accueil",
+  "projects": "Projets",
+  "skills": "Compétences",
   "intro": "basée en France, je suis passionnée par Internet et les dernières technologies",
   "greeting": "Bonjour ! Je suis Jade."
 }
