@@ -10,3 +10,12 @@ body {
 h1 {
   font-family: "Cormorant Garamond", serif;
 }
+
+/* Projects hover effect */
+.project-container:hover .project-image {
+  opacity: 0.3;
+}
+
+.project-container:hover .project-details {
+  opacity: 1;
+}
