@@ -40,20 +40,21 @@ const Projects: FC = () => {
 
                   {/* Code and demo */}
                   <div>
-                    <a href={project.code} target="_blank" rel="noopener noreferrer" className="text-lg rounded-sm px-4 py-2 bg-black text-bgColor">
-                      Code
-                    </a>
+                    <div className="btn">
+                      <div className="circle"></div>
+                      <a href={project.code} target="_blank" rel="noopener noreferrer">
+                        Code
+                      </a>
+                    </div>
                     {project.url === "" ? (
                       ""
                     ) : (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-lg rounded-sm ml-4 px-4 py-2 bg-black text-bgColor"
-                      >
-                        Demo
-                      </a>
+                      <div className="btn">
+                        <div className="circle"></div>
+                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                          Demo
+                        </a>
+                      </div>
                     )}
                   </div>
                 </div>

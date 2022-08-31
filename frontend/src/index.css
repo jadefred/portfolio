@@ -32,3 +32,58 @@ h1 {
     transform: translateY(0);
   }
 }
+
+/* test button */
+.btn {
+  display: inline-flex;
+  height: 35px;
+  width: 80px;
+  border: 1px solid black;
+  color: black;
+  background-color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 1rem;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn a {
+  color: #fffcf2;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.5s ease-out;
+}
+
+.circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #fffcf2;
+  position: absolute;
+  transition: all 0.7s ease-out;
+  top: 20px;
+  left: 40px;
+}
+
+.btn:hover .circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -40px;
+}
+
+.btn:hover a {
+  color: black;
+}
