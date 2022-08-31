@@ -21,21 +21,40 @@ const Projects: FC = () => {
         {projectsList &&
           projectsList.map((project: IProjects) => {
             return (
-              <div key={project.id} className="relative project-container">
+              <div key={project.id} className="relative project-container h-72">
                 {/* image */}
 
-                  <img src={project.image} alt={project.name} className="project-image opacity-100" />
-
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="project-image opacity-100 rounded-md w-full h-full object-cover transition duration-500"
+                />
 
                 {/* projects name and links */}
-                <div className="project-details absolute opacity-0 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-                  <div>
-                    <p>{project.name}</p>
+                <div className="project-details absolute opacity-0 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full h-full p-12 flex flex-col justify-between transition duration-500">
+                  {/* name and skills */}
+                  <div className="project-details__text">
+                    <p className="text-3xl font-semibold mb-2">{project.name}</p>
                     <p>{project.skills}</p>
                   </div>
+
+                  {/* Code and demo */}
                   <div>
-                    <a href={project.code}>Code</a>
-                    {project.url === "" ? "" : <a href={project.url}>Demo</a>}
+                    <a href={project.code} target="_blank" rel="noopener noreferrer" className="text-lg rounded-sm px-4 py-2 bg-black text-bgColor">
+                      Code
+                    </a>
+                    {project.url === "" ? (
+                      ""
+                    ) : (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg rounded-sm ml-4 px-4 py-2 bg-black text-bgColor"
+                      >
+                        Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
