@@ -16,7 +16,10 @@ const Projects: FC = () => {
 
   return (
     <>
-      <h2>{t("projects")}</h2>
+      <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-5">
+        <h2 className="font-semibold text-2xl relative">{t("projects")}</h2>
+      </span>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {projectsList &&
           projectsList.map((project: IProjects) => {
