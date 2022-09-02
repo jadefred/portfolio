@@ -15,9 +15,10 @@ module.exports = {
     extend: {
       colors: {
         bgColor: "#fffcf2",
+        linkedinBlue: "#0e76a8",
       },
       animation: {
-        rotate: "rotate 500ms ease-in-out both",
+        rotate: "rotate 300ms ease-in-out both",
       },
       keyframes: {
         rotate: {
@@ -26,8 +27,12 @@ module.exports = {
         },
       },
       spacing: {
-        '13px': '13px',
-      }
+        "7px": "7px",
+        "13px": "13px",
+      },
+      backgroundImage: {
+        githuboutline: "url('/src/assets/images/github-outline.svg')",
+      },
     },
   },
   plugins: [],
