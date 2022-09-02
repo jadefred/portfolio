@@ -12,7 +12,7 @@ const Intro: FC = () => {
     <>
       <div className="flex flex-col-reverse my-6 gap-y-8 md:flex-row md:items-center md:my-12">
         <div>
-          <h2 className="font-display text-4xl">{t("greeting")}</h2>
+          <p className="font-display text-3xl">{t("greeting")}</p>
           {/* typing animation - change display language according to context */}
           {language === "fr" && (
             <TypeAnimation

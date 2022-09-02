@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import projectsList from "../assets/projects.json";
+import arrow from "../assets/images/arrow-white.svg";
 
 interface IProjects {
   id: string;
@@ -16,7 +17,7 @@ const Projects: FC = () => {
 
   return (
     <>
-      <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-5">
+      <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-8">
         <h2 className="font-semibold text-2xl relative">{t("projects")}</h2>
       </span>
 
@@ -42,21 +43,39 @@ const Projects: FC = () => {
                   </div>
 
                   {/* Code and demo */}
-                  <div>
-                    <div className="btn">
-                      <div className="circle"></div>
-                      <a href={project.code} target="_blank" rel="noopener noreferrer">
+                  <div className="flex">
+                    <div className="flex bg-black relative px-4 py-1 group rounded">
+                      <a
+                        href={project.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
+                      >
                         Code
                       </a>
+                      <img
+                        src={arrow}
+                        alt="arrow"
+                        className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-rotate"
+                      />
                     </div>
                     {project.url === "" ? (
                       ""
                     ) : (
-                      <div className="btn">
-                        <div className="circle"></div>
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      <div className="flex bg-black relative px-4 py-1 group rounded ml-4">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
+                        >
                           Demo
                         </a>
+                        <img
+                          src={arrow}
+                          alt="arrow"
+                          className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-rotate"
+                        />
                       </div>
                     )}
                   </div>
