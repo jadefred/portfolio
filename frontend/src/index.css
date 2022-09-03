@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Raleway", sans-serif;
-  background-color: #fffcf2;
+@layer base {
+  body {
+    @apply bg-bgColor font-sans;
+  }
+  h1 {
+    @apply font-display;
+  }
 }
 
-h1 {
-  font-family: "Cormorant Garamond", serif;
+@layer components {
+  .skills-icons-size {
+    @apply w-20 h-20;
+  }
+  .skills-icons-container {
+    @apply flex flex-col items-center gap-y-2
+  }
 }
 
 /* Projects hover effect */

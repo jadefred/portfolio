@@ -17,7 +17,7 @@ const Projects: FC = () => {
 
   return (
     <>
-      <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-8">
+      <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-14">
         <h2 className="font-semibold text-2xl relative">{t("projects")}</h2>
       </span>
 
