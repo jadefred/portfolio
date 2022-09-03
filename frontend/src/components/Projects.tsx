@@ -16,7 +16,7 @@ const Projects: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="mt-24">
       <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-14">
         <h2 className="font-semibold text-2xl relative">{t("projects")}</h2>
       </span>
@@ -56,7 +56,7 @@ const Projects: FC = () => {
                       <img
                         src={arrow}
                         alt="arrow"
-                        className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-rotate"
+                        className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-slide"
                       />
                     </div>
                     {project.url === "" ? (
@@ -74,7 +74,7 @@ const Projects: FC = () => {
                         <img
                           src={arrow}
                           alt="arrow"
-                          className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-rotate"
+                          className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-slide"
                         />
                       </div>
                     )}
@@ -84,7 +84,7 @@ const Projects: FC = () => {
             );
           })}
       </div>
-    </>
+    </div>
   );
 };
 
