@@ -12,6 +12,20 @@
 }
 
 @layer components {
+  /* section titles and its decorating span block*/
+  .section-title {
+    @apply mt-24;
+  }
+
+  .section-title__span {
+    @apply before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-14;
+  }
+
+  .section-title__h2 {
+    @apply font-semibold text-2xl relative;
+  }
+
+  /* skills icons' style */
   .skills-icons-size {
     @apply w-20 h-20;
   }
@@ -21,6 +35,7 @@
   .sidebar--linkedin-svg {
     @apply group-hover:fill-bgColor transition duration-150 ease-in-out;
   }
+
   /* modal's class - hamburger menu */
   .modal {
     @apply w-screen h-screen top-0 left-0 right-0 bottom-0 fixed z-10;

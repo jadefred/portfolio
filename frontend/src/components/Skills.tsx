@@ -18,9 +18,9 @@ const Skills: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="mt-24" id="skills">
-      <span className="before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-14">
-        <h2 className="font-semibold text-2xl relative">{t("skills")}</h2>
+    <div className="section-title" id="skills">
+      <span className="section-title__span">
+        <h2 className="section-title__h2">{t("skills")}</h2>
       </span>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-6 gap-x-2 md:grid-cols-4 md:gap-x-0 lg:grid-cols-6 lg:gap-y-9">

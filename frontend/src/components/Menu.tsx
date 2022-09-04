@@ -32,6 +32,11 @@ const Menu: FC = () => {
           <p onClick={() => toogleModal(modal)}>{t("skills").toUpperCase()}</p>
         </Link>
       </div>
+      <div>
+        <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
+          <p onClick={() => toogleModal(modal)}>CONTACT</p>
+        </Link>
+      </div>
 
       {/* language select */}
       <div>
