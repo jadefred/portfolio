@@ -5,5 +5,8 @@
   "skills": "Compétences",
   "intro": "basée en France, je suis passionnée par Internet et les dernières technologies",
   "greeting": "Bonjour ! Je suis Jade.",
-  "contactMe": "Me contacter"
+  "contactMe": "Me contacter",
+  "name": "Nom",
+  "firstName": "Prénom",
+  "lastName": "Nom de famille"
 }

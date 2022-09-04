@@ -5,5 +5,8 @@
   "skills": "Skills",
   "intro": "based in France, I am fascinated by internet and the latest technologies",
   "greeting": "Hi ! I am Jade.",
-  "contactMe": "Contact me"
+  "contactMe": "Contact me",
+  "name": "Name",
+  "firstName": "First name",
+  "lastName": "Last name"
 }
