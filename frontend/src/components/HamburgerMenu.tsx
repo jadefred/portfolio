@@ -7,6 +7,12 @@ import usePreferenceStatus from "../Context";
 const HamburgerMenu: FC = () => {
   const { modal, hamburgerToggle } = usePreferenceStatus();
 
+  if (modal) {
+    document.body.classList.add('active-modal');
+  } else {
+    document.body.classList.remove('active-modal');
+  }
+
   return (
     <>
       <Hamburger toggled={modal} toggle={hamburgerToggle} size={26} />

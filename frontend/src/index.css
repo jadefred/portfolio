@@ -44,7 +44,10 @@
     @apply modal bg-white animate-overlay;
   }
   .modal--content {
-    @apply absolute top-2/4 -translate-y-2/4 -translate-x-2/4 rounded-[3px] w-full text-center z-20 animate-slideTop;
+    @apply absolute top-[40%] -translate-y-2/4 -translate-x-2/4 rounded-[3px] w-full text-center z-20 animate-slideTop;
+  }
+  .active-modal {
+    @apply overflow-y-hidden;
   }
 }
 
