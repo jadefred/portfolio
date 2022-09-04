@@ -16,7 +16,20 @@
     @apply w-20 h-20;
   }
   .skills-icons-container {
-    @apply flex flex-col items-center gap-y-5
+    @apply flex flex-col items-center gap-y-5;
+  }
+  .sidebar--linkedin-svg {
+    @apply group-hover:fill-bgColor transition duration-150 ease-in-out;
+  }
+  /* modal's class - hamburger menu */
+  .modal {
+    @apply w-screen h-screen top-0 left-0 right-0 bottom-0 fixed z-10;
+  }
+  .overlay {
+    @apply modal bg-white animate-overlay;
+  }
+  .modal--content {
+    @apply absolute top-2/4 -translate-y-2/4 -translate-x-2/4 rounded-[3px] w-full text-center z-20 animate-slideTop;
   }
 }
 

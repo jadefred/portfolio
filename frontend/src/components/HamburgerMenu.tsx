@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import Hamburger from "hamburger-react";
-import "../styles/modal.css";
+// import "../styles/modal.css";
 import Menu from "./Menu";
 
 const HamburgerMenu: FC = () => {

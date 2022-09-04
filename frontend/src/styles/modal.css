@@ -1,5 +1,5 @@
-.modal,
-.overlay {
+.modal-test,
+.overlay-test {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: 10;
 }
 
-.overlay {
+.overlay-test {
   background: white;
   animation: overlay-bg 150ms linear;
 }
@@ -24,7 +24,7 @@
   }
 }
 
-.modal--content {
+.modal--content-test {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);

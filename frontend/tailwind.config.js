@@ -20,7 +20,8 @@ module.exports = {
       animation: {
         slide: "slide 300ms ease-in-out both",
         ping: "ping 0.8s ease-in-out infinite both",
-        jello: "jello 0.9s both",
+        overlay: "overlay 150ms linear",
+        slideTop: "slideTop 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both"
       },
       keyframes: {
         slide: {
@@ -32,17 +33,18 @@ module.exports = {
           "80%": { transform: "scale(1.2)", opacity: "0" },
           "100%": { transform: "scale(1.2)", opacity: "0" },
         },
-        jello: {
-          "0%": { transform: "scale3d(1, 1, 1)" },
-          "30%": { transform: "scale3d(1.25, 0.75, 1)" },
-          "40%": { transform: "scale3d(0.75, 1.25, 1)" },
-          "50%": { transform: "scale3d(1.15, 0.85, 1)" },
-          "65%": { transform: "scale3d(0.95, 1.05, 1)" },
-          "75%": { transform: "scale3d(1.05, 0.95, 1)" },
-          "100%": { transform: "scale3d(1, 1, 1)" },
+        overlay: {
+          "0%": { backgroundColor: "rgba(255, 255, 255, 0.25)" },
+          "100%": { backgroundColor: "rgba(255, 255, 255, 1)" },
+        },
+        slideTop: {
+          "0%": { color: "rgba(0, 0, 0, 0)", transform: "translateY(0)" },
+          "100%": { color: "rgba(0, 0, 0, 1)", transform: "translateY(-100px)" },
         },
       },
       spacing: {
+        "1.5px": "1.5px",
+        "3px": "3px",
         "7px": "7px",
         "13px": "13px",
         "38px": "38px",
