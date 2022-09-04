@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 
 const Menu: FC = () => {
   const { t, i18n } = useTranslation();
-  const { language, changeLanguage } = usePreferenceStatus();
+  const { language, changeLanguage, modal, toogleModal } = usePreferenceStatus();
 
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
@@ -19,17 +19,17 @@ const Menu: FC = () => {
     <div className="flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row md:gap-x-10 relative">
       <div>
         <Link to="home" spy={true} smooth={true} offset={0} duration={500}>
-          {t("home").toUpperCase()}
+          <p onClick={() => toogleModal(modal)}>{t("home").toUpperCase()}</p>
         </Link>
       </div>
       <div>
         <Link to="projects" spy={true} smooth={true} offset={0} duration={500}>
-          {t("projects").toUpperCase()}
+          <p onClick={() => toogleModal(modal)}>{t("projects").toUpperCase()}</p>
         </Link>
       </div>
       <div>
         <Link to="skills" spy={true} smooth={true} offset={0} duration={500}>
-          {t("skills").toUpperCase()}
+          <p onClick={() => toogleModal(modal)}>{t("skills").toUpperCase()}</p>
         </Link>
       </div>
 

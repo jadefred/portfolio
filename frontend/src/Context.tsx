@@ -11,7 +11,8 @@ type Action = {
   language: IContext["language"];
   modal: IContext["modal"];
   changeLanguage: (language: string) => void;
-  togglemodal: React.Dispatch<SetStateAction<boolean>>;
+  hamburgerToggle: React.Dispatch<SetStateAction<boolean>>;
+  toogleModal: (modal: boolean) => void;
 };
 
 const PreferenceContext = createContext({} as Action);
@@ -33,12 +34,22 @@ export const PreferenceProvider = ({ children }: IProps) => {
     });
   };
 
-  const togglemodal = () => {
+  const hamburgerToggle = () => {
+    dispatch({
+      type: UserActionKind.HAMBURGERTOGGLE,
+      payload: {
+        ...state,
+        modal: !state.modal,
+      },
+    });
+  };
+
+  const toogleModal = (modal: boolean) => {
     dispatch({
       type: UserActionKind.TOOGLEMODAL,
       payload: {
         ...state,
-        modal: !state.modal,
+        modal: !modal,
       },
     });
   };
@@ -47,7 +58,8 @@ export const PreferenceProvider = ({ children }: IProps) => {
     language: state.language,
     modal: state.modal,
     changeLanguage,
-    togglemodal,
+    hamburgerToggle,
+    toogleModal,
   };
 
   return <PreferenceContext.Provider value={value}>{children}</PreferenceContext.Provider>;

@@ -5,17 +5,17 @@ import Menu from "./Menu";
 import usePreferenceStatus from "../Context";
 
 const HamburgerMenu: FC = () => {
-  const { modal, togglemodal } = usePreferenceStatus();
+  const { modal, hamburgerToggle } = usePreferenceStatus();
 
   return (
     <>
-      <Hamburger toggled={modal} toggle={togglemodal} size={26} />
+      <Hamburger toggled={modal} toggle={hamburgerToggle} size={26} />
 
       {modal && (
         <div className="modal">
           <div className="overlay flex justify-end">
             <div className="mt-3 pr-5">
-              <Hamburger toggled={modal} toggle={togglemodal} size={26} />
+              <Hamburger toggled={modal} toggle={hamburgerToggle} size={26} />
             </div>
           </div>
 

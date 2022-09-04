@@ -6,6 +6,7 @@ export interface IContext {
 // An enum with all the types of actions to use in our reducer
 export enum UserActionKind {
   CHANGELANGUAGE = "CHANGELANGUAGE",
+  HAMBURGERTOGGLE = "HAMBURGERTOGGLE",
   TOOGLEMODAL = "TOOGLEMODAL",
 }
 
@@ -23,6 +24,12 @@ const userReducer = (state: IContext, action: UserAction) => {
       return {
         ...state,
         language: payload.language,
+      };
+
+    case UserActionKind.HAMBURGERTOGGLE:
+      return {
+        ...state,
+        modal: payload.modal,
       };
 
     case UserActionKind.TOOGLEMODAL:
