@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
+import { Link } from "react-scroll";
 
 const Menu: FC = () => {
   const { t, i18n } = useTranslation();
@@ -17,13 +18,19 @@ const Menu: FC = () => {
   return (
     <div className="flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row md:gap-x-10 relative">
       <div>
-        <p>{t("home").toUpperCase()}</p>
+        <Link to="home" spy={true} smooth={true} offset={0} duration={500}>
+          {t("home").toUpperCase()}
+        </Link>
       </div>
       <div>
-        <p>{t("projects").toUpperCase()}</p>
+        <Link to="projects" spy={true} smooth={true} offset={0} duration={500}>
+          {t("projects").toUpperCase()}
+        </Link>
       </div>
       <div>
-        <p>{t("skills").toUpperCase()}</p>
+        <Link to="skills" spy={true} smooth={true} offset={0} duration={500}>
+          {t("skills").toUpperCase()}
+        </Link>
       </div>
 
       {/* language select */}
