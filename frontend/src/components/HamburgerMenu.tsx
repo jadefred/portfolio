@@ -1,20 +1,21 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import Hamburger from "hamburger-react";
 // import "../styles/modal.css";
 import Menu from "./Menu";
+import usePreferenceStatus from "../Context";
 
 const HamburgerMenu: FC = () => {
-  const [isOpen, setOpen] = useState<boolean>(false);
+  const { modal, togglemodal } = usePreferenceStatus();
 
   return (
     <>
-      <Hamburger toggled={isOpen} toggle={setOpen} size={26}/>
+      <Hamburger toggled={modal} toggle={togglemodal} size={26} />
 
-      {isOpen && (
+      {modal && (
         <div className="modal">
           <div className="overlay flex justify-end">
             <div className="mt-3 pr-5">
-              <Hamburger toggled={isOpen} toggle={setOpen} size={26} />
+              <Hamburger toggled={modal} toggle={togglemodal} size={26} />
             </div>
           </div>
 
