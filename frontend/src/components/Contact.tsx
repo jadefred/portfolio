@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 
 const Contact: FC = () => {
   const { t } = useTranslation();
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,6 +13,7 @@ const Contact: FC = () => {
     emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
       (result) => {
         console.log(result.text);
+        if (form.current) form.current.reset();
       },
       (error) => {
         console.log(error.text);
@@ -25,7 +26,7 @@ const Contact: FC = () => {
       <h2 className="section-title__h2">{t("contactMe")}</h2>
 
       <div className="flex">
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail} className="tracking-wide">
           <div className="flex flex-col gap-y-6">
             {/* name */}
             <div>
@@ -71,7 +72,11 @@ const Contact: FC = () => {
           </div>
 
           {/* submit button */}
-          <input type="submit" value="Send" />
+          <input
+            type="submit"
+            value={t("send")}
+            className="my-8 cursor-pointer font-semibold text-xl border-2 border-black rounded-full py-3 px-5 tracking-wider transition-colors hover:bg-black hover:text-bgColor"
+          />
         </form>
 
         <div>

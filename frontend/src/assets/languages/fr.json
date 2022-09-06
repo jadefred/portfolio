@@ -8,5 +8,6 @@
   "contactMe": "Me contacter",
   "name": "Nom",
   "firstName": "Prénom",
-  "lastName": "Nom de famille"
+  "lastName": "Nom de famille",
+  "send":"Envoyer"
 }

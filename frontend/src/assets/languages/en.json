@@ -8,5 +8,6 @@
   "contactMe": "Contact me",
   "name": "Name",
   "firstName": "First name",
-  "lastName": "Last name"
+  "lastName": "Last name",
+  "send": "Send"
 }
