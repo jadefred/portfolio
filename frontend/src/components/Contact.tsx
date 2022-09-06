@@ -23,7 +23,7 @@ const Contact: FC = () => {
                 <label htmlFor="firstName" className="mt-1">
                   {t("firstName")}
                 </label>
-                <input type="text" name="firstName" className="contact__input--text" />
+                <input type="text" name="firstName" className="contact__input h-9" />
               </div>
 
               {/* last name  */}
@@ -31,7 +31,7 @@ const Contact: FC = () => {
                 <label htmlFor="lastName" className="mt-1">
                   {t("lastName")}
                 </label>
-                <input type="text" name="lastName" className="contact__input--text" />
+                <input type="text" name="lastName" className="contact__input h-9" />
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Contact: FC = () => {
             <label htmlFor="email" className="mb-1">
               E-mail<span className="text-xl"> *</span>
             </label>
-            <input type="email" name="email" className="contact__input--text" />
+            <input type="email" name="email" className="contact__input h-9" />
           </div>
 
           {/* message */}
@@ -49,7 +49,7 @@ const Contact: FC = () => {
             <label htmlFor="message" className="mb-1">
               Message<span className="text-xl"> *</span>
             </label>
-            <input type="textarea" name="message" className="contact__input--text" />
+            <textarea name="message" cols={10} rows={5} className="contact__input"></textarea>
           </div>
         </div>
 
