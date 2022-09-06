@@ -50,9 +50,6 @@ module.exports = {
         "38px": "38px",
         "40%":"40%"
       },
-      backgroundImage: {
-        githuboutline: "url('/src/assets/images/github-outline.svg')",
-      },
     },
   },
   plugins: [],

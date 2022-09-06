@@ -49,6 +49,11 @@
   .active-modal {
     @apply overflow-y-hidden;
   }
+
+  /* contact form style */
+  .contact__input--text {
+    @apply border border-black h-9 rounded-sm focus:outline focus:outline-offset-[3px] focus:outline-[3px] focus:outline-black;
+  }
 }
 
 /* Projects hover effect */
