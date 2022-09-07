@@ -13,6 +13,7 @@ const Contact: FC = () => {
   const { t } = useTranslation();
   const form = useRef<HTMLFormElement | null>(null);
   const [errorMsg, setErrorMsg] = useState<IFormInput>({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState<boolean>(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,7 +51,10 @@ const Contact: FC = () => {
       emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
         (result) => {
           console.log(result.text);
+          //reset form
           if (form.current) form.current.reset();
+          //display sent message
+          setSent(true);
         },
         (error) => {
           console.log(error.text);
@@ -115,12 +119,20 @@ const Contact: FC = () => {
             </div>
           </div>
 
-          {/* submit button */}
-          <input
-            type="submit"
-            value={t("send")}
-            className="my-8 cursor-pointer font-semibold text-xl border-2 border-black rounded-full py-3 px-5 tracking-wider transition-colors hover:bg-black hover:text-bgColor"
-          />
+          <div className="flex items-center justify-between">
+            {/* submit button */}
+            <input
+              type="submit"
+              value={t("send")}
+              className="my-8 cursor-pointer font-semibold text-xl border-2 border-black rounded-full py-3 px-5 tracking-wider transition-colors hover:bg-black hover:text-bgColor"
+            />
+            {sent && (
+              <div className={`flex flex-col items-center transition ${sent? "opacity-100" : "opacity-0"}`}>
+                <p>{t("thanksForContactingMe")}</p>
+                <p>{t("replayASAP")}</p>
+              </div>
+            )}
+          </div>
         </form>
 
         <div>

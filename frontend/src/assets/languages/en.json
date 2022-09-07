@@ -13,5 +13,7 @@
   "nameErrorMsg": "Please enter in your name",
   "emailErrorMsgMissing": "Please enter in your email",
   "emailErrorMsgWrongFormat": "Please enter a valid email address",
-  "messageErrorMsg": "Please enter in your message"
+  "messageErrorMsg": "Please enter in your message",
+  "thanksForContactingMe":"Thank you for making contact,",
+  "replayASAP":"I will reply to you as soon as possible."
 }

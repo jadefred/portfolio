@@ -13,5 +13,7 @@
   "nameErrorMsg": "Veuillez saisir votre nom",
   "emailErrorMsgMissing": "Veuillez saisir votre email",
   "emailErrorMsgWrongFormat": "Format de l'adresse email invalide",
-  "messageErrorMsg": "Veuillez saisir votre message"
+  "messageErrorMsg": "Veuillez saisir votre message",
+  "thanksForContactingMe":"Merci de me contacter,",
+  "replayASAP":"je vous répondrais dès que possible."
 }
