@@ -3,8 +3,15 @@ import { useTranslation } from "react-i18next";
 import workingImage from "../assets/images/working.png";
 import emailjs from "@emailjs/browser";
 
-interface IFormInput {
+interface IFormErrorMessage {
   name: string;
+  email: string;
+  message: string;
+}
+
+interface IFormInput {
+  firstName: string;
+  lastName: string;
   email: string;
   message: string;
 }
@@ -12,42 +19,50 @@ interface IFormInput {
 const Contact: FC = () => {
   const { t } = useTranslation();
   const form = useRef<HTMLFormElement | null>(null);
-  const [errorMsg, setErrorMsg] = useState<IFormInput>({ name: "", email: "", message: "" });
+  const [input, setInput] = useState<IFormInput>({ firstName: "", lastName: "", email: "", message: "" });
+  const [errorMsg, setErrorMsg] = useState<IFormErrorMessage>({ name: "", email: "", message: "" });
   const [sent, setSent] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [btnDisable, setbtnDisable] = useState<boolean>(false);
+  const [sendEmailError, setEmailError] = useState<boolean>(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
     //get all form input values
-    const firstName = (e.currentTarget.elements.namedItem("firstName") as HTMLInputElement).value;
-    const lastName = (e.currentTarget.elements.namedItem("lastName") as HTMLInputElement).value;
-    const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
-    const message = (e.currentTarget.elements.namedItem("message") as HTMLInputElement).value;
+    // const firstName = (e.currentTarget.elements.namedItem("firstName") as HTMLInputElement).value;
+    // const lastName = (e.currentTarget.elements.namedItem("lastName") as HTMLInputElement).value;
+    // const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
+    // const message = (e.currentTarget.elements.namedItem("message") as HTMLInputElement).value;
+
+    const firstName = input.firstName;
+    const lastName = input.lastName;
+    const email = input.email;
+    const message = input.message;
+
     const emailPattern: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     if (firstName === "" || lastName === "" || email === "" || message === "" || !emailPattern.test(email)) {
       //check if input values are filled and in correct format
       if (firstName === "" || lastName === "") {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, name: t("nameErrorMsg") }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, name: t("nameErrorMsg") }));
       } else {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, name: "" }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, name: "" }));
       }
 
       if (email === "") {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgMissing") }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, email: t("emailErrorMsgMissing") }));
       } else if (emailPattern.test(email) === false) {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgWrongFormat") }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, email: t("emailErrorMsgWrongFormat") }));
       } else {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, email: "" }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, email: "" }));
       }
 
       if (message === "") {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, message: t("messageErrorMsg") }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, message: t("messageErrorMsg") }));
       } else {
-        setErrorMsg((prev: IFormInput) => ({ ...prev, message: "" }));
+        setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, message: "" }));
       }
 
       setLoading(false);
@@ -55,11 +70,11 @@ const Contact: FC = () => {
       emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
         (result) => {
           console.log(result.text);
-          //reset form
-          if (form.current) form.current.reset();
           setSent(true);
           setLoading(false);
+          setbtnDisable(true);
           setErrorMsg({ name: "", email: "", message: "" });
+          setInput({ firstName: "", lastName: "", email: "", message: "" });
         },
         (error) => {
           console.log(error.text);
@@ -67,7 +82,25 @@ const Contact: FC = () => {
           setErrorMsg({ name: "", email: "", message: "" });
         }
       );
+
+      //success
+      // setSent(true);
+      // setLoading(false);
+      // setbtnDisable(true);
+      // setErrorMsg({ name: "", email: "", message: "" });
+      // setInput({ firstName: "", lastName: "", email: "", message: "" });
+
+      //emailJS failed
+      // setEmailError(true)
+      // setLoading(false);
+      // setErrorMsg({ name: "", email: "", message: "" });
     }
+  };
+
+  const handleInput = (e: { target: { name: string; value: string } }) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+    setbtnDisable(false);
+    setSent(false);
   };
 
   return (
@@ -90,7 +123,13 @@ const Contact: FC = () => {
                   <label htmlFor="firstName" className="mt-1">
                     {t("firstName")}
                   </label>
-                  <input type="text" name="firstName" className="contact__input h-9" />
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={input.firstName}
+                    className="contact__input h-9"
+                    onChange={handleInput}
+                  />
                 </div>
 
                 {/* last name  */}
@@ -98,7 +137,13 @@ const Contact: FC = () => {
                   <label htmlFor="lastName" className="mt-1">
                     {t("lastName")}
                   </label>
-                  <input type="text" name="lastName" className="contact__input h-9" />
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={input.lastName}
+                    onChange={handleInput}
+                    className="contact__input h-9"
+                  />
                 </div>
 
                 {errorMsg.name !== "" && <p className="contact__errorMessage -bottom-5">{errorMsg.name}</p>}
@@ -110,7 +155,7 @@ const Contact: FC = () => {
               <label htmlFor="email" className="mb-1">
                 E-mail<span className="text-xl"> *</span>
               </label>
-              <input type="email" name="email" className="contact__input h-9" />
+              <input type="email" name="email" value={input.email} onChange={handleInput} className="contact__input h-9" />
               {errorMsg.email !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.email}</p>}
             </div>
 
@@ -119,12 +164,19 @@ const Contact: FC = () => {
               <label htmlFor="message" className="mb-1">
                 Message<span className="text-xl"> *</span>
               </label>
-              <textarea name="message" cols={10} rows={5} className="contact__input min-h-[130px]"></textarea>
+              <textarea
+                name="message"
+                cols={10}
+                rows={5}
+                value={input.message}
+                onChange={handleInput}
+                className="contact__input min-h-[130px]"
+              ></textarea>
               {errorMsg.message !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.message}</p>}
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center gap-x-16">
             {/* submit button */}
             <input
               type="submit"
@@ -134,10 +186,17 @@ const Contact: FC = () => {
               }`}
               disabled={btnDisable}
             />
-            {sent && (
-              <div className={`flex flex-col items-center transition`}>
+            {sent && !loading && (
+              <div className="flex flex-col items-center transition">
                 <p>{t("thanksForContactingMe")}</p>
                 <p>{t("replayASAP")}</p>
+              </div>
+            )}
+
+            {sendEmailError && !loading && (
+              <div className="flex flex-col items-center transition">
+                <p>{t("sthWentWrong")}</p>
+                <p>{t("tryAgain")}</p>
               </div>
             )}
           </div>

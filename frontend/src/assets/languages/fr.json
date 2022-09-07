@@ -17,5 +17,7 @@
   "messageErrorMsg": "Veuillez saisir votre message",
   "thanksForContactingMe": "Merci de me contacter,",
   "replayASAP": "je vous répondrais dès que possible.",
-  "loading": "chargement"
+  "loading": "chargement",
+  "sthWentWrong": "Un problème est apparu, ",
+  "tryAgain": "veuillez réessayer"
 }

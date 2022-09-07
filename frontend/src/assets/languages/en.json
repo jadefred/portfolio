@@ -15,7 +15,9 @@
   "emailErrorMsgMissing": "Please enter in your email",
   "emailErrorMsgWrongFormat": "Please enter a valid email address",
   "messageErrorMsg": "Please enter in your message",
-  "thanksForContactingMe":"Thank you for making contact,",
-  "replayASAP":"I will reply to you as soon as possible.",
-  "loading": "loading"
+  "thanksForContactingMe": "Thank you for making contact,",
+  "replayASAP": "I will reply to you as soon as possible.",
+  "loading": "loading",
+  "sthWentWrong": "Something went wrong, ",
+  "tryAgain": "please try again later"
 }
