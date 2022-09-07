@@ -14,9 +14,12 @@ const Contact: FC = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const [errorMsg, setErrorMsg] = useState<IFormInput>({ name: "", email: "", message: "" });
   const [sent, setSent] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [btnDisable, setbtnDisable] = useState<boolean>(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
     //get all form input values
     const firstName = (e.currentTarget.elements.namedItem("firstName") as HTMLInputElement).value;
@@ -25,43 +28,45 @@ const Contact: FC = () => {
     const message = (e.currentTarget.elements.namedItem("message") as HTMLInputElement).value;
     const emailPattern: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    //check if input values are filled and in correct format
-    if (firstName === "" || lastName === "") {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, name: t("nameErrorMsg") }));
-    } else {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, name: "" }));
-    }
+    if (firstName === "" || lastName === "" || email === "" || message === "" || !emailPattern.test(email)) {
+      //check if input values are filled and in correct format
+      if (firstName === "" || lastName === "") {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, name: t("nameErrorMsg") }));
+      } else {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, name: "" }));
+      }
 
-    if (email === "") {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgMissing") }));
-    } else if (emailPattern.test(email) === false) {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgWrongFormat") }));
-    } else {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, email: "" }));
-    }
+      if (email === "") {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgMissing") }));
+      } else if (emailPattern.test(email) === false) {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgWrongFormat") }));
+      } else {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, email: "" }));
+      }
 
-    if (message === "") {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, message: t("messageErrorMsg") }));
-    } else {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, message: "" }));
-    }
+      if (message === "") {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, message: t("messageErrorMsg") }));
+      } else {
+        setErrorMsg((prev: IFormInput) => ({ ...prev, message: "" }));
+      }
 
-    //send to emailJS if all values are good
-    if (firstName !== "" && lastName !== "" && email !== "" && message !== "" && emailPattern.test(email)) {
+      setLoading(false);
+    } else {
       emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
         (result) => {
           console.log(result.text);
           //reset form
           if (form.current) form.current.reset();
-          //display sent message
           setSent(true);
+          setLoading(false);
+          setErrorMsg({ name: "", email: "", message: "" });
         },
         (error) => {
           console.log(error.text);
+          setLoading(false);
+          setErrorMsg({ name: "", email: "", message: "" });
         }
       );
-    } else {
-      return;
     }
   };
 
@@ -123,11 +128,14 @@ const Contact: FC = () => {
             {/* submit button */}
             <input
               type="submit"
-              value={t("send")}
-              className="my-8 cursor-pointer font-semibold text-xl border-2 border-black rounded-full py-3 px-5 tracking-wider transition-colors hover:bg-black hover:text-bgColor"
+              value={loading ? t("loading") : sent ? t("sent") : t("send")}
+              className={`my-8 cursor-pointer font-semibold text-xl border-2 rounded-full py-3 px-5 tracking-wider transition-colors  ${
+                btnDisable ? "border-emerald-700 bg-emerald-700 text-bgColor" : "border-black hover:bg-black hover:text-bgColor"
+              }`}
+              disabled={btnDisable}
             />
             {sent && (
-              <div className={`flex flex-col items-center transition ${sent? "opacity-100" : "opacity-0"}`}>
+              <div className={`flex flex-col items-center transition`}>
                 <p>{t("thanksForContactingMe")}</p>
                 <p>{t("replayASAP")}</p>
               </div>
