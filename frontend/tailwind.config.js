@@ -21,7 +21,7 @@ module.exports = {
         slide: "slide 300ms ease-in-out both",
         ping: "ping 0.8s ease-in-out infinite both",
         overlay: "overlay 150ms linear",
-        slideTop: "slideTop 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both"
+        slideTop: "slideTop 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both",
       },
       keyframes: {
         slide: {
@@ -49,7 +49,9 @@ module.exports = {
         "13px": "13px",
         "38px": "38px",
         "130px": "130px",
-        "40%":"40%"
+        "250px": "250px",
+        "280px": "280px",
+        "40%": "40%",
       },
     },
   },
