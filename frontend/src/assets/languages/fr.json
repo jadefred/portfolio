@@ -9,5 +9,9 @@
   "name": "Nom",
   "firstName": "Prénom",
   "lastName": "Nom de famille",
-  "send":"Envoyer"
+  "send":"Envoyer",
+  "nameErrorMsg": "Veuillez saisir votre nom",
+  "emailErrorMsgMissing": "Veuillez saisir votre email",
+  "emailErrorMsgWrongFormat": "Format de l'adresse email invalide",
+  "messageErrorMsg": "Veuillez saisir votre message"
 }

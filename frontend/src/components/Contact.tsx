@@ -17,35 +17,35 @@ const Contact: FC = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    //get all input value
+    //get all form input values
     const firstName = (e.currentTarget.elements.namedItem("firstName") as HTMLInputElement).value;
     const lastName = (e.currentTarget.elements.namedItem("lastName") as HTMLInputElement).value;
     const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
     const message = (e.currentTarget.elements.namedItem("message") as HTMLInputElement).value;
     const emailPattern: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    //check if input values are correct
+    //check if input values are filled and in correct format
     if (firstName === "" || lastName === "") {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, name: "missing name" }));
+      setErrorMsg((prev: IFormInput) => ({ ...prev, name: t("nameErrorMsg") }));
     } else {
       setErrorMsg((prev: IFormInput) => ({ ...prev, name: "" }));
     }
 
     if (email === "") {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, email: "missing email" }));
+      setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgMissing") }));
     } else if (emailPattern.test(email) === false) {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, email: "wrong format" }));
+      setErrorMsg((prev: IFormInput) => ({ ...prev, email: t("emailErrorMsgWrongFormat") }));
     } else {
       setErrorMsg((prev: IFormInput) => ({ ...prev, email: "" }));
     }
 
     if (message === "") {
-      setErrorMsg((prev: IFormInput) => ({ ...prev, message: "missing message" }));
+      setErrorMsg((prev: IFormInput) => ({ ...prev, message: t("messageErrorMsg") }));
     } else {
       setErrorMsg((prev: IFormInput) => ({ ...prev, message: "" }));
     }
 
-    //send to emailJS of all values are good
+    //send to emailJS if all values are good
     if (firstName !== "" && lastName !== "" && email !== "" && message !== "" && emailPattern.test(email)) {
       emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
         (result) => {
@@ -75,8 +75,8 @@ const Contact: FC = () => {
                 <span className="text-xl"> *</span>
               </p>
 
-              {/* first name  */}
-              <div className="flex gap-x-10">
+              <div className="flex gap-x-10 relative">
+                {/* first name  */}
                 <div className="flex flex-col-reverse w-2/4">
                   <label htmlFor="firstName" className="mt-1">
                     {t("firstName")}
@@ -91,29 +91,29 @@ const Contact: FC = () => {
                   </label>
                   <input type="text" name="lastName" className="contact__input h-9" />
                 </div>
-              </div>
 
-              {errorMsg.name !== "" && <p>{errorMsg.name}</p>}
+                {errorMsg.name !== "" && <p className="contact__errorMessage -bottom-5">{errorMsg.name}</p>}
+              </div>
             </div>
 
             {/* email */}
-            <div className="flex flex-col">
+            <div className="flex flex-col relative">
               <label htmlFor="email" className="mb-1">
                 E-mail<span className="text-xl"> *</span>
               </label>
               <input type="email" name="email" className="contact__input h-9" />
+              {errorMsg.email !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.email}</p>}
             </div>
-            {errorMsg.email !== "" && <p>{errorMsg.email}</p>}
 
             {/* message */}
-            <div className="flex flex-col">
+            <div className="flex flex-col relative">
               <label htmlFor="message" className="mb-1">
                 Message<span className="text-xl"> *</span>
               </label>
               <textarea name="message" cols={10} rows={5} className="contact__input min-h-[130px]"></textarea>
+              {errorMsg.message !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.message}</p>}
             </div>
           </div>
-          {errorMsg.message !== "" && <p>{errorMsg.message}</p>}
 
           {/* submit button */}
           <input

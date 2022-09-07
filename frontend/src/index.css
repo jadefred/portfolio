@@ -54,6 +54,10 @@
   .contact__input {
     @apply border border-black rounded-sm focus:outline focus:outline-offset-[3px] focus:outline-2 focus:outline-black p-3;
   }
+  .contact__errorMessage {
+    @apply absolute text-sm text-rose-800
+  }
+
 }
 
 /* Projects hover effect */
