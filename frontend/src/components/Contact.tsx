@@ -86,6 +86,18 @@ const Contact: FC = () => {
           setErrorMsg({ name: "", email: "", message: "" });
         }
       );
+
+      //success
+      // setSent(true);
+      // setLoading(false);
+      // setbtnDisable(true);
+      // setErrorMsg({ name: "", email: "", message: "" });
+      // setInput({ firstName: "", lastName: "", email: "", message: "" });
+
+      //emailJS failed
+      // setEmailError(true);
+      // setLoading(false);
+      // setErrorMsg({ name: "", email: "", message: "" });
     }
   };
 
