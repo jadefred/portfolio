@@ -1,7 +1,8 @@
 import { FC, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import workingImage from "../assets/images/working.png";
 import emailjs from "@emailjs/browser";
+import { useLottie } from "lottie-react";
+import notificationLottie from "../assets/lotties/notification.json";
 
 interface IFormErrorMessage {
   name: string;
@@ -26,15 +27,17 @@ const Contact: FC = () => {
   const [btnDisable, setbtnDisable] = useState<boolean>(false);
   const [sendEmailError, setEmailError] = useState<boolean>(false);
 
+  //lottie settings and variable
+  const options = {
+    animationData: notificationLottie,
+    loop: true,
+  };
+  const { View } = useLottie(options);
+
+  //submit form and send user message to email through the service of emailJS
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
-    //get all form input values
-    // const firstName = (e.currentTarget.elements.namedItem("firstName") as HTMLInputElement).value;
-    // const lastName = (e.currentTarget.elements.namedItem("lastName") as HTMLInputElement).value;
-    // const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
-    // const message = (e.currentTarget.elements.namedItem("message") as HTMLInputElement).value;
 
     const firstName = input.firstName;
     const lastName = input.lastName;
@@ -96,95 +99,109 @@ const Contact: FC = () => {
     <div className="section-title" id="contact">
       <h2 className="section-title__h2">{t("contactMe")}</h2>
 
-      <form ref={form} onSubmit={sendEmail} className="tracking-wide min-w-[280px]">
-        <div className="flex flex-col gap-y-6">
-          {/* name */}
-          <div>
-            <p className="mb-1">
-              {t("name")}
-              <span className="text-xl"> *</span>
-            </p>
+      <div className="flex flex-col-reverse md:flex-row">
+        {/* form */}
+        <form ref={form} onSubmit={sendEmail} className="tracking-wide md:w-2/4">
+          <div className="flex flex-col gap-y-6">
+            {/* name */}
+            <div>
+              <p className="mb-1">
+                {t("name")}
+                <span className="text-xl"> *</span>
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-x-10 relative">
-              {/* first name  */}
-              <div className="flex flex-col-reverse w-full sm:w-2/4">
-                <label htmlFor="firstName" className="mt-1">
-                  {t("firstName")}
-                </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={input.firstName}
-                  className="contact__input h-9"
-                  onChange={handleInput}
-                />
+              <div className="flex flex-col md:flex-row gap-x-2 relative w-full">
+                {/* first name  */}
+                <div className="flex flex-col-reverse w-full md:w-2/4">
+                  <label htmlFor="firstName" className="mt-1">
+                    {t("firstName")}
+                  </label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={input.firstName}
+                    className="contact__input h-9"
+                    onChange={handleInput}
+                  />
+                </div>
+
+                {/* last name  */}
+                <div className="flex flex-col-reverse w-full md:w-2/4">
+                  <label htmlFor="lastName" className="mt-1">
+                    {t("lastName")}
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={input.lastName}
+                    onChange={handleInput}
+                    className="contact__input h-9"
+                  />
+                </div>
+
+                {errorMsg.name !== "" && <p className="contact__errorMessage -bottom-5">{errorMsg.name}</p>}
               </div>
+            </div>
 
-              {/* last name  */}
-              <div className="flex flex-col-reverse w-full sm:w-2/4">
-                <label htmlFor="lastName" className="mt-1">
-                  {t("lastName")}
-                </label>
-                <input type="text" name="lastName" value={input.lastName} onChange={handleInput} className="contact__input h-9" />
+            {/* email */}
+            <div className="flex flex-col relative">
+              <label htmlFor="email" className="mb-1">
+                E-mail<span className="text-xl"> *</span>
+              </label>
+              <input type="email" name="email" value={input.email} onChange={handleInput} className="contact__input h-9" />
+              {errorMsg.email !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.email}</p>}
+            </div>
+
+            {/* message */}
+            <div className="flex flex-col relative">
+              <label htmlFor="message" className="mb-1">
+                Message<span className="text-xl"> *</span>
+              </label>
+              <textarea
+                name="message"
+                cols={10}
+                rows={5}
+                value={input.message}
+                onChange={handleInput}
+                className="contact__input min-h-[130px]"
+              ></textarea>
+              {errorMsg.message !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.message}</p>}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between">
+            {/* submit button */}
+            <input
+              type="submit"
+              value={loading ? t("loading") : sent ? t("sent") : t("send")}
+              className={`my-8 font-semibold text-xl border-2 rounded-full py-3 px-5 tracking-wider transition-colors  ${
+                btnDisable
+                  ? "border-emerald-700 bg-emerald-700 opacity-70 text-bgColor cursor-default"
+                  : "cursor-pointer border-black hover:bg-black hover:text-bgColor"
+              }`}
+              disabled={btnDisable}
+            />
+            {sent && !loading && (
+              <div className="flex flex-col transition items-center">
+                <p>{t("thanksForContactingMe")}</p>
+                <p>{t("replayASAP")}</p>
               </div>
+            )}
 
-              {errorMsg.name !== "" && <p className="contact__errorMessage -bottom-5">{errorMsg.name}</p>}
-            </div>
+            {sendEmailError && !loading && (
+              <div className="flex flex-col items-center transition sm:pr-8">
+                <p>{t("sthWentWrong")}</p>
+                <p>{t("tryAgain")}</p>
+              </div>
+            )}
           </div>
+        </form>
 
-          {/* email */}
-          <div className="flex flex-col relative">
-            <label htmlFor="email" className="mb-1">
-              E-mail<span className="text-xl"> *</span>
-            </label>
-            <input type="email" name="email" value={input.email} onChange={handleInput} className="contact__input h-9" />
-            {errorMsg.email !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.email}</p>}
-          </div>
-
-          {/* message */}
-          <div className="flex flex-col relative">
-            <label htmlFor="message" className="mb-1">
-              Message<span className="text-xl"> *</span>
-            </label>
-            <textarea
-              name="message"
-              cols={10}
-              rows={5}
-              value={input.message}
-              onChange={handleInput}
-              className="contact__input min-h-[130px]"
-            ></textarea>
-            {errorMsg.message !== "" && <p className="contact__errorMessage -bottom-6">{errorMsg.message}</p>}
-          </div>
+        {/* lottie animation */}
+        <div className="md:w-2/4 md:relative md:-top-10 flex items-center">
+          <div>{View}</div>
         </div>
-
-        <div className="flex items-center justify-between">
-          {/* submit button */}
-          <input
-            type="submit"
-            value={loading ? t("loading") : sent ? t("sent") : t("send")}
-            className={`my-8 font-semibold text-xl border-2 rounded-full py-3 px-5 tracking-wider transition-colors  ${
-              btnDisable
-                ? "border-emerald-700 bg-emerald-700 opacity-70 text-bgColor cursor-default"
-                : "cursor-pointer border-black hover:bg-black hover:text-bgColor"
-            }`}
-            disabled={btnDisable}
-          />
-          {sent && !loading && (
-            <div className="flex flex-col transition items-center">
-              <p>{t("thanksForContactingMe")}</p>
-              <p>{t("replayASAP")}</p>
-            </div>
-          )}
-
-          {sendEmailError && !loading && (
-            <div className="flex flex-col items-center transition sm:pr-8">
-              <p>{t("sthWentWrong")}</p>
-              <p>{t("tryAgain")}</p>
-            </div>
-          )}
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
