@@ -4,7 +4,11 @@ import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
 import { Link } from "react-scroll";
 
-const Menu: FC = () => {
+interface IScroll {
+  scrolled: boolean;
+}
+
+const Menu: FC<IScroll> = ({ scrolled }) => {
   const { t, i18n } = useTranslation();
   const { language, changeLanguage, modal, toogleModal } = usePreferenceStatus();
 
@@ -16,7 +20,11 @@ const Menu: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row md:gap-x-10 relative">
+    <div
+      className={`flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row relative ${
+        scrolled ? "md:gap-x-8" : "md:gap-x-10 "
+      }`}
+    >
       <div>
         <Link to="home" spy={true} smooth={true} offset={0} duration={500}>
           <p onClick={() => toogleModal(modal)}>{t("home").toUpperCase()}</p>

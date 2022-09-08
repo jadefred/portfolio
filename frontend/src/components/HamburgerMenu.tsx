@@ -4,7 +4,11 @@ import Hamburger from "hamburger-react";
 import Menu from "./Menu";
 import usePreferenceStatus from "../Context";
 
-const HamburgerMenu: FC = () => {
+interface IScroll {
+  scrolled: boolean;
+}
+
+const HamburgerMenu: FC<IScroll> = ({scrolled}) => {
   const { modal, hamburgerToggle } = usePreferenceStatus();
 
   if (modal) {
@@ -26,7 +30,7 @@ const HamburgerMenu: FC = () => {
           </div>
 
           <div className="modal--content">
-            <Menu />
+            <Menu scrolled={scrolled} />
           </div>
         </div>
       )}
