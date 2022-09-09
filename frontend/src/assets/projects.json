@@ -5,7 +5,7 @@
     "skills": "HTML / CSS",
     "url": "https://jadefred.github.io/OpenClassrooms_P2_Booki/",
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+    "image": "images/pj2-booki.png"
   },
   {
     "id": "002",
@@ -13,7 +13,7 @@
     "skills": "HTML / CSS / SCSS",
     "url": "https://jadefred.github.io/PuiYuFredenucci_3_13032022/",
     "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
-    "image": "https://dontgetserious.com/wp-content/uploads/2021/07/money-memes-7.jpg"
+    "image": "images/pj3-ohmyfood.png"
   },
   {
     "id": "003",
@@ -29,7 +29,7 @@
     "skills": "React / TypeScript",
     "url": "https://jadefred.github.io/typescript_react_tic_tac_toe/",
     "code": "https://github.com/jadefred/typescript_react_tic_tac_toe",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+    "image": "images/tictactoe.png"
   },
   {
     "id": "005",
@@ -46,5 +46,13 @@
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
     "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+  },
+  {
+    "id": "007",
+    "name": "Portfolio",
+    "skills": "React / TypeScript / TailwindCSS",
+    "url": "",
+    "code": "https://github.com/jadefred/portfolio",
+    "image": "images/portfolioScreenShot.png"
   }
 ]

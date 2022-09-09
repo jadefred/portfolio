@@ -54,13 +54,19 @@ const Contact: FC = () => {
       message === "" ||
       !emailPattern.test(email) ||
       regexName.test(firstName) === false ||
-      regexName.test(lastName) === false
+      regexName.test(lastName) === false ||
+      firstName.length > 40 ||
+      lastName.length > 40
     ) {
-      
       //check if input values are filled and in correct format
       if (firstName === "" || lastName === "") {
         setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, name: t("nameErrorMsg") }));
-      } else if (regexName.test(firstName) === false || regexName.test(lastName) === false) {
+      } else if (
+        regexName.test(firstName) === false ||
+        regexName.test(lastName) === false ||
+        firstName.length > 40 ||
+        lastName.length > 40
+      ) {
         setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, name: t("nameErrorMsgWrongFormat") }));
       } else {
         setErrorMsg((prev: IFormErrorMessage) => ({ ...prev, name: "" }));
@@ -82,34 +88,23 @@ const Contact: FC = () => {
 
       setLoading(false);
     } else {
-      // emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
-      //   (result) => {
-      //     console.log(result.text);
-      //     setSent(true);
-      //     setLoading(false);
-      //     setbtnDisable(true);
-      //     setErrorMsg({ name: "", email: "", message: "" });
-      //     setInput({ firstName: "", lastName: "", email: "", message: "" });
-      //   },
-      //   (error) => {
-      //     console.log(error.text);
-      //     setLoading(false);
-      //     setEmailError(true);
-      //     setErrorMsg({ name: "", email: "", message: "" });
-      //   }
-      // );
-
-      //success
-      // setSent(true);
-      // setLoading(false);
-      // setbtnDisable(true);
-      // setErrorMsg({ name: "", email: "", message: "" });
-      // setInput({ firstName: "", lastName: "", email: "", message: "" });
-
-      //emailJS failed
-      setEmailError(true);
-      setLoading(false);
-      setErrorMsg({ name: "", email: "", message: "" });
+      emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
+        (result) => {
+          console.log(result.text);
+          setSent(true);
+          setLoading(false);
+          setbtnDisable(true);
+          setEmailError(false);
+          setErrorMsg({ name: "", email: "", message: "" });
+          setInput({ firstName: "", lastName: "", email: "", message: "" });
+        },
+        (error) => {
+          console.log(error.text);
+          setLoading(false);
+          setEmailError(true);
+          setErrorMsg({ name: "", email: "", message: "" });
+        }
+      );
     }
   };
 
