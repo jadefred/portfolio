@@ -12,6 +12,7 @@ const App: FC = () => {
 
   return (
     <>
+    <div id='home'></div>
       <Header />
       <div className="w-10/12 mx-auto">
         <Intro />

@@ -12,6 +12,7 @@
   "send": "Send",
   "sent": "Sent",
   "nameErrorMsg": "Please enter in your name",
+  "nameErrorMsgWrongFormat": "Name is containing invalid character or too long",
   "emailErrorMsgMissing": "Please enter in your email",
   "emailErrorMsgWrongFormat": "Please enter a valid email address",
   "messageErrorMsg": "Please enter in your message",

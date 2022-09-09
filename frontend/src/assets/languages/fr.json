@@ -12,6 +12,7 @@
   "send": "Envoyer",
   "sent": "Envoyé",
   "nameErrorMsg": "Veuillez saisir votre nom",
+  "nameErrorMsgWrongFormat": "Format du nom invalide, trop long ou contient du caractère invalide",
   "emailErrorMsgMissing": "Veuillez saisir votre email",
   "emailErrorMsgWrongFormat": "Format de l'adresse email invalide",
   "messageErrorMsg": "Veuillez saisir votre message",

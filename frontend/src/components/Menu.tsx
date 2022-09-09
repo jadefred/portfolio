@@ -26,23 +26,31 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       }`}
     >
       <div>
-        <Link to="home" spy={true} smooth={true} offset={0} duration={500}>
-          <p onClick={() => toogleModal(modal)}>{t("home").toUpperCase()}</p>
+        <Link to="home" spy={true} smooth={true} offset={-30} duration={500}>
+          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+            {t("home").toUpperCase()}
+          </p>
         </Link>
       </div>
       <div>
-        <Link to="projects" spy={true} smooth={true} offset={0} duration={500}>
-          <p onClick={() => toogleModal(modal)}>{t("projects").toUpperCase()}</p>
+        <Link to="projects" spy={true} smooth={true} offset={-80} duration={500}>
+          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+            {t("projects").toUpperCase()}
+          </p>
         </Link>
       </div>
       <div>
-        <Link to="skills" spy={true} smooth={true} offset={0} duration={500}>
-          <p onClick={() => toogleModal(modal)}>{t("skills").toUpperCase()}</p>
+        <Link to="skills" spy={true} smooth={true} offset={-80} duration={500}>
+          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+            {t("skills").toUpperCase()}
+          </p>
         </Link>
       </div>
       <div>
         <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
-          <p onClick={() => toogleModal(modal)}>CONTACT</p>
+          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+            CONTACT
+          </p>
         </Link>
       </div>
 

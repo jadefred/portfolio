@@ -17,8 +17,9 @@ const Header: FC = () => {
 
   return (
     <div
-      className={`flex z-40 bg-bgColor transition-all px-5 ${scrolled ? "fixed top-0 justify-between w-full py-3" : "md:flex-col justify-between items-center"}`}
-      id="home"
+      className={`flex z-40 bg-bgColor transition-all px-5 ${
+        scrolled ? "fixed top-0 justify-between w-full py-3 lg:px-10" : "md:flex-col justify-between items-center"
+      }`}
     >
       <h1 className={`text-center text-2xl transition-all ${scrolled ? "m-0" : "my-7 md:text-5xl"}`}>Jade Fredenucci</h1>
       {isMobile && <HamburgerMenu scrolled={scrolled} />}
