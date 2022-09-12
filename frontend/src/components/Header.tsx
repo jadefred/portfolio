@@ -17,7 +17,7 @@ const Header: FC = () => {
 
   return (
     <div
-      className={`flex z-40 bg-bgColor transition-all px-5 ${
+      className={`flex z-20 bg-bgColor transition-all px-5 ${
         scrolled ? "fixed top-0 justify-between w-full py-3 lg:px-10" : "md:flex-col justify-between items-center"
       }`}
     >

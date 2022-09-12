@@ -1,5 +1,4 @@
-import { FC, useState, useCallback } from "react";
-import { IUnknownObjectKey } from "./interface";
+import { FC } from "react";
 
 //components
 import Header from "./components/Header";

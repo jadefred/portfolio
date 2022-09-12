@@ -1,8 +1,8 @@
-import { FC, SetStateAction } from "react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import projectsList from "../assets/projects.json";
 import arrow from "../assets/images/arrow-white.svg";
-import { IUnknownObjectKey, IProjects } from "../interface";
+import { IProjects } from "../interface";
 import ProjectDetails from "./ProjectDetails";
 
 //test
@@ -93,7 +93,7 @@ const Projects: FC = () => {
                     )}
                   </div>
                 </div>
-                {projectDetails[project.id] ? <ProjectDetails /> : null}
+                {projectDetails[project.id] ? <ProjectDetails project={project} /> : null}
               </div>
             );
           })}

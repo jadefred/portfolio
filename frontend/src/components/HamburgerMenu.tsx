@@ -8,13 +8,13 @@ interface IScroll {
   scrolled: boolean;
 }
 
-const HamburgerMenu: FC<IScroll> = ({scrolled}) => {
+const HamburgerMenu: FC<IScroll> = ({ scrolled }) => {
   const { modal, hamburgerToggle } = usePreferenceStatus();
 
   if (modal) {
-    document.body.classList.add('active-modal');
+    document.body.classList.add("active-modal");
   } else {
-    document.body.classList.remove('active-modal');
+    document.body.classList.remove("active-modal");
   }
 
   return (
@@ -23,13 +23,13 @@ const HamburgerMenu: FC<IScroll> = ({scrolled}) => {
 
       {modal && (
         <div className="modal">
-          <div className="overlay flex justify-end">
+          <div className="modal animate-overlay flex justify-end bg-bgColor">
             <div className="mt-3 pr-5">
               <Hamburger toggled={modal} toggle={hamburgerToggle} size={26} />
             </div>
           </div>
 
-          <div className="modal--content">
+          <div className="modal--content animate-slideTop -translate-y-2/4 -translate-x-2/4">
             <Menu scrolled={scrolled} />
           </div>
         </div>
