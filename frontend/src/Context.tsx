@@ -5,6 +5,7 @@ import { UserActionKind, IContext } from "./usePreferenceReducer";
 const initialState: IContext = {
   language: localStorage.getItem("lng") || "fr",
   modal: false,
+  projectDetails: {},
 };
 
 type Action = {
@@ -13,6 +14,8 @@ type Action = {
   changeLanguage: (language: string) => void;
   hamburgerToggle: React.Dispatch<SetStateAction<boolean>>;
   toogleModal: (modal: boolean) => void;
+  projectDetails: IContext["projectDetails"];
+  toogleProjectDetails: (project_id: string) => void;
 };
 
 const PreferenceContext = createContext({} as Action);
@@ -54,12 +57,24 @@ export const PreferenceProvider = ({ children }: IProps) => {
     });
   };
 
+  const toogleProjectDetails = (project_id: string) => {
+    dispatch({
+      type: UserActionKind.TOOGLEPROJECTDETAILS,
+      payload: {
+        ...state,
+        projectDetails: { ...state.projectDetails, [project_id]: Boolean(!state.projectDetails[project_id]) },
+      },
+    });
+  };
+
   const value = {
     language: state.language,
     modal: state.modal,
+    projectDetails: state.projectDetails,
     changeLanguage,
     hamburgerToggle,
     toogleModal,
+    toogleProjectDetails,
   };
 
   return <PreferenceContext.Provider value={value}>{children}</PreferenceContext.Provider>;

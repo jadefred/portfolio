@@ -1,6 +1,7 @@
 export interface IContext {
   language: string;
   modal: boolean;
+  projectDetails: { [key: string]: boolean };
 }
 
 // An enum with all the types of actions to use in our reducer
@@ -8,6 +9,7 @@ export enum UserActionKind {
   CHANGELANGUAGE = "CHANGELANGUAGE",
   HAMBURGERTOGGLE = "HAMBURGERTOGGLE",
   TOOGLEMODAL = "TOOGLEMODAL",
+  TOOGLEPROJECTDETAILS = "TOOGLEPROJECTDETAILS",
 }
 
 // An interface for our actions
@@ -36,6 +38,12 @@ const userReducer = (state: IContext, action: UserAction) => {
       return {
         ...state,
         modal: payload.modal,
+      };
+
+    case UserActionKind.TOOGLEPROJECTDETAILS:
+      return {
+        ...state,
+        projectDetails: payload.projectDetails,
       };
 
     default:

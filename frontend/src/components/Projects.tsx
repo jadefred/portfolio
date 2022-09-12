@@ -2,16 +2,25 @@ import { FC, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import projectsList from "../assets/projects.json";
 import arrow from "../assets/images/arrow-white.svg";
-import {IUnknownObjectKey, IProjects} from "../interface"
+import { IUnknownObjectKey, IProjects } from "../interface";
+import ProjectDetails from "./ProjectDetails";
 
-interface IProps {
-  toggleComment: (id: string) => void;
-  projectDetails: IUnknownObjectKey;
-  setProjectDetails: React.Dispatch<SetStateAction<IUnknownObjectKey>>
-}
+//test
+import usePreferenceStatus from "../Context";
 
-const Projects: FC<IProps> = ({ toggleComment, projectDetails, setProjectDetails }) => {
+// interface IProps {
+//   toggleComment: (id: string) => void;
+//   projectDetails: IUnknownObjectKey;
+//   setProjectDetails: React.Dispatch<SetStateAction<IUnknownObjectKey>>;
+// }
+
+const Projects: FC = () => {
   const { t } = useTranslation();
+
+  //test
+  const { projectDetails, toogleProjectDetails } = usePreferenceStatus();
+
+  console.log("context", projectDetails);
 
   return (
     <div className="section-title" id="projects">
@@ -43,7 +52,7 @@ const Projects: FC<IProps> = ({ toggleComment, projectDetails, setProjectDetails
                   {/* Code and demo */}
                   <div className="flex">
                     <div className="flex bg-black relative px-4 py-1 group rounded">
-                      <p onClick={() => toggleComment(project.id)} className="text-white">
+                      <p onClick={() => toogleProjectDetails(project.id)} className="text-white">
                         Savoir plus
                       </p>
                     </div>
@@ -84,8 +93,7 @@ const Projects: FC<IProps> = ({ toggleComment, projectDetails, setProjectDetails
                     )}
                   </div>
                 </div>
-                <p>{project.id}</p>
-                {projectDetails[project.id] ? <p>hello</p> : null}
+                {projectDetails[project.id] ? <ProjectDetails /> : null}
               </div>
             );
           })}

@@ -10,14 +10,16 @@ import Contact from "./components/Contact";
 
 const App: FC = () => {
   console.log("app rendered");
-  const [projectDetails, setProjectDetails] = useState<IUnknownObjectKey>({});
+  //const [projectDetails, setProjectDetails] = useState<IUnknownObjectKey>({});
 
   //toggle project's details modal, map id key to target clicked element
-  const toggleComment = useCallback((id: string) => {
-    setProjectDetails((prev) => (Boolean(!prev[id]) ? { ...prev, [id]: true } : { ...prev, [id]: false }));
-  }, []);
+  // const toggleComment = useCallback((id: string) => {
+  //   setProjectDetails((prev) => (Boolean(!prev[id]) ? { ...prev, [id]: true } : { ...prev, [id]: false }));
+  // }, []);
 
-  console.log(projectDetails);
+  // console.log(projectDetails);
+
+  //toggleComment={toggleComment} projectDetails={projectDetails} setProjectDetails={setProjectDetails}
 
   return (
     <>
@@ -25,7 +27,7 @@ const App: FC = () => {
       <Header />
       <div className="w-10/12 mx-auto">
         <Intro />
-        <Projects toggleComment={toggleComment} projectDetails={projectDetails} setProjectDetails={setProjectDetails} />
+        <Projects />
         <Skills />
         <Contact />
       </div>
