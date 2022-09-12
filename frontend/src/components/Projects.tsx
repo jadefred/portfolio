@@ -12,11 +12,15 @@ interface IProjects {
   image: string;
 }
 
-const Projects: FC = () => {
+interface IProps {
+  toggleComment: (id: string) => void;
+}
+
+const Projects: FC<IProps> = ({toggleComment}) => {
   const { t } = useTranslation();
 
   return (
-    <div className="section-title" id='projects'>
+    <div className="section-title" id="projects">
       <span className="section-title__span">
         <h2 className="section-title__h2">{t("projects")}</h2>
       </span>
@@ -44,6 +48,10 @@ const Projects: FC = () => {
 
                   {/* Code and demo */}
                   <div className="flex">
+                    <div className="flex bg-black relative px-4 py-1 group rounded">
+                      <p onClick={() => toggleComment(project.id)}  className="text-white">Savoir plus</p>
+                    </div>
+
                     <div className="flex bg-black relative px-4 py-1 group rounded">
                       <a
                         href={project.code}

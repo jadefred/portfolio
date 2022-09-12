@@ -88,23 +88,36 @@ const Contact: FC = () => {
 
       setLoading(false);
     } else {
-      emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
-        (result) => {
-          console.log(result.text);
-          setSent(true);
-          setLoading(false);
-          setbtnDisable(true);
-          setEmailError(false);
-          setErrorMsg({ name: "", email: "", message: "" });
-          setInput({ firstName: "", lastName: "", email: "", message: "" });
-        },
-        (error) => {
-          console.log(error.text);
-          setLoading(false);
-          setEmailError(true);
-          setErrorMsg({ name: "", email: "", message: "" });
-        }
-      );
+      // emailjs.sendForm("service_j56w46e", "template_v0zlawg", e.currentTarget, "wB1vrmlXi2S2CCwyQ").then(
+      //   (result) => {
+      //     console.log(result.text);
+      //     setSent(true);
+      //     setLoading(false);
+      //     setbtnDisable(true);
+      //     setEmailError(false);
+      //     setErrorMsg({ name: "", email: "", message: "" });
+      //     setInput({ firstName: "", lastName: "", email: "", message: "" });
+      //   },
+      //   (error) => {
+      //     console.log(error.text);
+      //     setLoading(false);
+      //     setEmailError(true);
+      //     setErrorMsg({ name: "", email: "", message: "" });
+      //   }
+      // );
+
+      //success
+      // setSent(true);
+      // setLoading(false);
+      // setbtnDisable(true);
+      // setErrorMsg({ name: "", email: "", message: "" });
+      // setInput({ firstName: "", lastName: "", email: "", message: "" });
+      // setEmailError(false);
+
+      //emailJS failed
+      setEmailError(true);
+      setLoading(false);
+      setErrorMsg({ name: "", email: "", message: "" });
     }
   };
 

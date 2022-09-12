@@ -30,7 +30,7 @@
     @apply w-20 h-20;
   }
   .skills-icons-container {
-    @apply flex flex-col items-center gap-y-5 transition-transform hover:scale-105 tracking-wide;
+    @apply flex flex-col items-center gap-y-5 tracking-wide;
   }
   .sidebar--linkedin-svg {
     @apply group-hover:fill-bgColor transition duration-150 ease-in-out;
@@ -66,6 +66,8 @@
 
 .project-container:hover .project-details {
   opacity: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0.375rem
 }
 
 .project-container:hover .project-details__text {

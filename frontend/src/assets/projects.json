@@ -46,13 +46,5 @@
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
     "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
-  },
-  {
-    "id": "007",
-    "name": "Portfolio",
-    "skills": "React / TypeScript / TailwindCSS",
-    "url": "",
-    "code": "https://github.com/jadefred/portfolio",
-    "image": "images/portfolioScreenShot.png"
   }
 ]
