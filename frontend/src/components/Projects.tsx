@@ -9,6 +9,7 @@ import usePreferenceStatus from "../Context";
 const Projects: FC = () => {
   const { t } = useTranslation();
   const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
+  
 
   return (
     <div className="section-title" id="projects">

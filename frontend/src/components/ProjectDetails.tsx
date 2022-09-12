@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { IProjects } from "../interface";
 import usePreferenceStatus from "../Context";
 import arrow from "../assets/images/arrow-white.svg";
@@ -11,21 +11,32 @@ interface IProps {
 const ProjectDetails: FC<IProps> = ({ project }) => {
   const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
 
+  console.log(projectDetails);
+
   //freeze body from scrolling when modal is there
   if (projectDetails[project.id]) {
     document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
   }
+
+  //function to update projectDetails object and remove modal class to unfreeze body
+  const closeModal = (id: string) => {
+    toogleProjectDetails(id);
+    document.body.classList.remove("active-modal");
+  };
 
   return (
     <div className="modal">
-      <div onClick={() => toogleProjectDetails(project.id)} className="modal bg-transparentBlack animate-overlayBlack"></div>
+      <div onClick={() => closeModal(project.id)} className="modal bg-transparentBlack animate-overlayBlack"></div>
       <div className="modal--content border right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 h-2/3 m-auto border-black bg-bgColor">
         {/* Content of project details */}
         <div className="flex flex-col">
           {/* cross svg */}
-            <img src={cross} alt="close project details" onClick={() => toogleProjectDetails(project.id)} className="w-8 cursor-pointer" />
+          <img
+            src={cross}
+            alt="close project details"
+            onClick={() => toogleProjectDetails(project.id)}
+            className="w-8 cursor-pointer"
+          />
           <div className="flex flex-col gap-y-5 text-left">
             <div>
               <h2 className="text-xl font-semibold">{project.name}</h2>
