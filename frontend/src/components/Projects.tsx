@@ -4,23 +4,11 @@ import projectsList from "../assets/projects.json";
 import arrow from "../assets/images/arrow-white.svg";
 import { IProjects } from "../interface";
 import ProjectDetails from "./ProjectDetails";
-
-//test
 import usePreferenceStatus from "../Context";
-
-// interface IProps {
-//   toggleComment: (id: string) => void;
-//   projectDetails: IUnknownObjectKey;
-//   setProjectDetails: React.Dispatch<SetStateAction<IUnknownObjectKey>>;
-// }
 
 const Projects: FC = () => {
   const { t } = useTranslation();
-
-  //test
-  const { projectDetails, toogleProjectDetails } = usePreferenceStatus();
-
-  console.log("context", projectDetails);
+  const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
 
   return (
     <div className="section-title" id="projects">
@@ -41,7 +29,7 @@ const Projects: FC = () => {
                   className="project-image opacity-100 rounded-md w-full h-full object-cover transition duration-500"
                 />
 
-                {/* projects name and links */}
+                {/* projects name and detail button */}
                 <div className="project-details absolute opacity-0 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full h-full p-12 flex flex-col justify-between transition duration-500">
                   {/* name and skills */}
                   <div className="project-details__text">
@@ -49,48 +37,19 @@ const Projects: FC = () => {
                     <p>{project.skills}</p>
                   </div>
 
-                  {/* Code and demo */}
-                  <div className="flex">
-                    <div className="flex bg-black relative px-4 py-1 group rounded">
-                      <p onClick={() => toogleProjectDetails(project.id)} className="text-white">
-                        Savoir plus
-                      </p>
-                    </div>
-
-                    <div className="flex bg-black relative px-4 py-1 group rounded">
-                      <a
-                        href={project.code}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
-                      >
-                        Code
-                      </a>
-                      <img
-                        src={arrow}
-                        alt="arrow"
-                        className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-slide"
-                      />
-                    </div>
-                    {project.url === "" ? (
-                      ""
-                    ) : (
-                      <div className="flex bg-black relative px-4 py-1 group rounded ml-4">
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
-                        >
-                          Demo
-                        </a>
-                        <img
-                          src={arrow}
-                          alt="arrow"
-                          className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-slide"
-                        />
-                      </div>
-                    )}
+                  {/* project's details */}
+                  <div className={`flex bg-black relative px-4 py-1 group rounded ${language === "en" ? "w-32" : "w-[9.5rem]"}`}>
+                    <p
+                      onClick={() => toogleProjectDetails(project.id)}
+                      className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
+                    >
+                      {t("learnMore")}
+                    </p>
+                    <img
+                      src={arrow}
+                      alt="arrow"
+                      className="ml-2 stroke-white h-3 absolute right-2 top-[13px] opacity-0 group-hover:animate-slide"
+                    />
                   </div>
                 </div>
                 {projectDetails[project.id] ? <ProjectDetails project={project} /> : null}

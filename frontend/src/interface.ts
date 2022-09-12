@@ -11,6 +11,8 @@ interface IProjects {
   url: string;
   code: string;
   image: string;
+  detailsEN: string;
+  detailsFR: string
 }
 
 export type { IUnknownObjectKey, IProjects };

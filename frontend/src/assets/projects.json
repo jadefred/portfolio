@@ -5,7 +5,9 @@
     "skills": "HTML / CSS",
     "url": "https://jadefred.github.io/OpenClassrooms_P2_Booki/",
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
-    "image": "images/pj2-booki.png"
+    "image": "images/pj2-booki.png",
+    "detailsEN": "Booki is a ",
+    "detailsFR": "Bookie est une maquette de site web d'une agence de voyage"
   },
   {
     "id": "002",
@@ -13,7 +15,9 @@
     "skills": "HTML / CSS / SCSS",
     "url": "https://jadefred.github.io/PuiYuFredenucci_3_13032022/",
     "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
-    "image": "images/pj3-ohmyfood.png"
+    "image": "images/pj3-ohmyfood.png",
+    "detailsEN": "This is ohmyfood",
+    "detailsFR": "C'est ohmyfood"
   },
   {
     "id": "003",
@@ -21,7 +25,9 @@
     "skills": "NodeJS / Express / MongoDB",
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
+    "detailsEN": "This is piiquante",
+    "detailsFR": "C'est piiquante"
   },
   {
     "id": "004",
@@ -29,7 +35,9 @@
     "skills": "React / TypeScript",
     "url": "https://jadefred.github.io/typescript_react_tic_tac_toe/",
     "code": "https://github.com/jadefred/typescript_react_tic_tac_toe",
-    "image": "images/tictactoe.png"
+    "image": "images/tictactoe.png",
+    "detailsEN": "This is tic tac toe",
+    "detailsFR": "C'est tic tac toe"
   },
   {
     "id": "005",
@@ -37,7 +45,9 @@
     "skills": "React / TypeScript / Redux",
     "url": "",
     "code": "https://github.com/jadefred/react_recreate_Kanap",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
+    "detailsEN": "This is kanap",
+    "detailsFR": "C'est kanap"
   },
   {
     "id": "006",
@@ -45,6 +55,8 @@
     "skills": "React / TypeScript / NodeJS / Express / TailwindCSS / PostgreSQL",
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg"
+    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
+    "detailsEN": "This is Groupomania",
+    "detailsFR": "C'est Groupomania"
   }
 ]

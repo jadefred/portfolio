@@ -29,7 +29,7 @@ const HamburgerMenu: FC<IScroll> = ({ scrolled }) => {
             </div>
           </div>
 
-          <div className="modal--content animate-slideTop -translate-y-2/4 -translate-x-2/4">
+          <div className="modal--content animate-slideTop top-[40%] -translate-y-2/4 -translate-x-2/4 w-full">
             <Menu scrolled={scrolled} />
           </div>
         </div>
