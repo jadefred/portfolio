@@ -1,22 +1,16 @@
-import { FC } from "react";
+import { FC, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import projectsList from "../assets/projects.json";
 import arrow from "../assets/images/arrow-white.svg";
-
-interface IProjects {
-  id: string;
-  name: string;
-  skills: string;
-  url: string;
-  code: string;
-  image: string;
-}
+import {IUnknownObjectKey, IProjects} from "../interface"
 
 interface IProps {
   toggleComment: (id: string) => void;
+  projectDetails: IUnknownObjectKey;
+  setProjectDetails: React.Dispatch<SetStateAction<IUnknownObjectKey>>
 }
 
-const Projects: FC<IProps> = ({toggleComment}) => {
+const Projects: FC<IProps> = ({ toggleComment, projectDetails, setProjectDetails }) => {
   const { t } = useTranslation();
 
   return (
@@ -49,7 +43,9 @@ const Projects: FC<IProps> = ({toggleComment}) => {
                   {/* Code and demo */}
                   <div className="flex">
                     <div className="flex bg-black relative px-4 py-1 group rounded">
-                      <p onClick={() => toggleComment(project.id)}  className="text-white">Savoir plus</p>
+                      <p onClick={() => toggleComment(project.id)} className="text-white">
+                        Savoir plus
+                      </p>
                     </div>
 
                     <div className="flex bg-black relative px-4 py-1 group rounded">
@@ -88,6 +84,8 @@ const Projects: FC<IProps> = ({toggleComment}) => {
                     )}
                   </div>
                 </div>
+                <p>{project.id}</p>
+                {projectDetails[project.id] ? <p>hello</p> : null}
               </div>
             );
           })}
