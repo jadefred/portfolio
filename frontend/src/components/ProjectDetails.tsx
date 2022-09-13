@@ -24,18 +24,16 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
 
   return (
     <div className="modal">
-      <div onClick={() => closeModal(project.id)} className="modal bg-transparentBlack backdrop-blur-sm animate-overlayBlack"></div>
-      <div className="modal--content border right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 inline-table m-auto bg-bgColor">
+      <div
+        onClick={() => closeModal(project.id)}
+        className="modal bg-transparentBlack backdrop-blur-sm animate-overlayBlack"
+      ></div>
+      <div className="modal--content border-4 right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 inline-table m-auto bg-bgColor border-black">
         {/* Content */}
         <div className="flex flex-col justify-between relative h-full">
           {/* cross svg */}
           <div className="flex justify-end my-1 pr-1">
-            <img
-              src={cross}
-              alt="close project details"
-              onClick={() => closeModal(project.id)}
-              className="w-7 cursor-pointer"
-            />
+            <img src={cross} alt="close project details" onClick={() => closeModal(project.id)} className="w-7 cursor-pointer" />
           </div>
           {/* Details */}
           <div className="flex flex-col h-full justify-between">
@@ -53,7 +51,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
 
             {/* Link of code and / or demo */}
             <div className="flex px-4 mb-5">
-              <div className="flex bg-black relative px-4 py-1 group rounded">
+              <div className="flex bg-black relative px-4 py-1 group">
                 <a
                   href={project.code}
                   target="_blank"
@@ -71,7 +69,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
               {project.url === "" ? (
                 ""
               ) : (
-                <div className="flex bg-black relative px-4 py-1 group rounded ml-4">
+                <div className="flex bg-black relative px-4 py-1 group ml-4">
                   <a
                     href={project.url}
                     target="_blank"

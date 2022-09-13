@@ -6,7 +6,7 @@
     "url": "https://jadefred.github.io/OpenClassrooms_P2_Booki/",
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
     "image": "images/pj2-booki.png",
-    "gif": "gif/ohmyfoodGIF.gif",
+    "gif": "gif/bookiGIF.gif",
     "detailsEN": "Booki is a ",
     "detailsFR": "Bookie est une maquette de site web d'une agence de voyage"
   },
@@ -27,41 +27,30 @@
     "skills": "NodeJS / Express / MongoDB",
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
-    "gif": "gif/ohmyfoodGIF.gif",
+    "image": "images/pj6-piiquante.png",
+    "gif": "gif/piiquanteGIF.gif",
     "detailsEN": "This is piiquante",
     "detailsFR": "C'est piiquante"
   },
   {
     "id": "004",
-    "name": "Tic Tac Toe",
-    "skills": "React / TypeScript",
-    "url": "https://jadefred.github.io/typescript_react_tic_tac_toe/",
-    "code": "https://github.com/jadefred/typescript_react_tic_tac_toe",
-    "image": "images/tictactoe.png",
-    "gif": "gif/ohmyfoodGIF.gif",
-    "detailsEN": "This is tic tac toe",
-    "detailsFR": "C'est tic tac toe"
-  },
-  {
-    "id": "005",
     "name": "Kanap",
     "skills": "React / TypeScript / Redux",
     "url": "",
     "code": "https://github.com/jadefred/react_recreate_Kanap",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
-    "gif": "gif/ohmyfoodGIF.gif",
+    "image": "images/pj5-kanap.png",
+    "gif": "gif/kanapGIF.gif",
     "detailsEN": "This is kanap",
     "detailsFR": "C'est kanap"
   },
   {
-    "id": "006",
+    "id": "005",
     "name": "Groupomania",
     "skills": "React / TypeScript / NodeJS / Express / TailwindCSS / PostgreSQL",
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
-    "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
-    "gif": "gif/ohmyfoodGIF.gif",
+    "image": "images/pj7-groupomania.png",
+    "gif": "gif/groupomaniaGIF.gif",
     "detailsEN": "This is Groupomania",
     "detailsFR": "C'est Groupomania"
   }

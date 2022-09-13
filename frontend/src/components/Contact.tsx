@@ -128,7 +128,7 @@ const Contact: FC = () => {
   };
 
   return (
-    <div className="section-title" id="contact">
+    <div className="section-title mb-10" id="contact">
       <span className="section-title__span">
         <h2 className="section-title__h2">{t("contactMe")}</h2>
       </span>
@@ -194,7 +194,7 @@ const Contact: FC = () => {
               <textarea
                 name="message"
                 cols={10}
-                rows={5}
+                rows={7}
                 value={input.message}
                 onChange={handleInput}
                 className="contact__input min-h-[130px]"
@@ -208,7 +208,7 @@ const Contact: FC = () => {
             <input
               type="submit"
               value={loading ? t("loading") : sent ? t("sent") : t("send")}
-              className={`my-8 font-semibold text-xl border-2 rounded-full py-3 px-5 tracking-wider transition-colors  ${
+              className={`my-8 font-semibold text-xl border-2 py-2.5 px-4 tracking-wider transition-colors ${
                 btnDisable
                   ? "border-emerald-700 bg-emerald-700 opacity-70 text-bgColor cursor-default"
                   : "cursor-pointer border-black hover:bg-black hover:text-bgColor"
