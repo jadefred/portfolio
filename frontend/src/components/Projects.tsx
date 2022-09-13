@@ -9,7 +9,6 @@ import usePreferenceStatus from "../Context";
 const Projects: FC = () => {
   const { t } = useTranslation();
   const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
-  
 
   return (
     <div className="section-title" id="projects">
@@ -17,17 +16,20 @@ const Projects: FC = () => {
         <h2 className="section-title__h2">{t("projects")}</h2>
       </span>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projectsList &&
           projectsList.map((project: IProjects) => {
             return (
-              <div key={project.id} className="relative project-container h-72">
+              <div
+                key={project.id}
+                className="relative project-container h-72 border-2 border-black after:absolute after:bg-black after:top-2.5 after:left-2.5 after:-right-2.5 after:-bottom-2.5 after:-z-20"
+              >
                 {/* image */}
 
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="project-image opacity-100 rounded-md w-full h-full object-cover transition duration-500"
+                  className="project-image opacity-100 w-full h-full object-cover transition duration-500"
                 />
 
                 {/* projects name and detail button */}
@@ -39,7 +41,11 @@ const Projects: FC = () => {
                   </div>
 
                   {/* project's details */}
-                  <div className={`flex bg-black relative px-4 py-1 group rounded cursor-pointer ${language === "en" ? "w-32" : "w-[9.5rem]"}`}>
+                  <div
+                    className={`flex bg-black relative px-4 py-1 group cursor-pointer ${
+                      language === "en" ? "w-32" : "w-[9.5rem]"
+                    }`}
+                  >
                     <p
                       onClick={() => toogleProjectDetails(project.id)}
                       className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
