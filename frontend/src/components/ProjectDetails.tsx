@@ -24,7 +24,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
 
   return (
     <div className="modal">
-      <div onClick={() => closeModal(project.id)} className="modal bg-transparentBlack animate-overlayBlack"></div>
+      <div onClick={() => closeModal(project.id)} className="modal bg-transparentBlack backdrop-blur-sm animate-overlayBlack"></div>
       <div className="modal--content border right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 inline-table m-auto bg-bgColor">
         {/* Content */}
         <div className="flex flex-col justify-between relative h-full">

@@ -16,7 +16,7 @@ module.exports = {
       colors: {
         bgColor: "#fffcf2",
         linkedinBlue: "#0e76a8",
-        transparentBlack: "rgba(49, 49, 49, 0.8)",
+        transparentBlack: "rgba(78, 78, 78, 0.8)",
       },
       animation: {
         slide: "slide 300ms ease-in-out both",
@@ -40,8 +40,8 @@ module.exports = {
           "100%": { backgroundColor: "rgba(255, 255, 255, 1)" },
         },
         overlayBlack: {
-          "0%": { backgroundColor: "rgba(49, 49, 49, 0.25)" },
-          "100%": { backgroundColor: "rgba(49, 49, 49, 0.8)" },
+          "0%": { backgroundColor: "rgba(78, 78, 78, 0.25)" },
+          "100%": { backgroundColor: "rgba(78, 78, 78, 0.8)" },
         },
         slideTop: {
           "0%": { color: "rgba(0, 0, 0, 0)", transform: "translateY(0)" },

@@ -28,28 +28,28 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       <div>
         <Link to="home" spy={true} smooth={true} offset={-30} duration={500}>
           <p onClick={() => toogleModal(modal)} className="cursor-pointer">
-            {t("home").toUpperCase()}
+            {t("home")}
           </p>
         </Link>
       </div>
       <div>
         <Link to="projects" spy={true} smooth={true} offset={-80} duration={500}>
           <p onClick={() => toogleModal(modal)} className="cursor-pointer">
-            {t("projects").toUpperCase()}
+            {t("projects")}
           </p>
         </Link>
       </div>
       <div>
         <Link to="skills" spy={true} smooth={true} offset={-80} duration={500}>
           <p onClick={() => toogleModal(modal)} className="cursor-pointer">
-            {t("skills").toUpperCase()}
+            {t("skills")}
           </p>
         </Link>
       </div>
       <div>
         <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
           <p onClick={() => toogleModal(modal)} className="cursor-pointer">
-            CONTACT
+            Contact
           </p>
         </Link>
       </div>
@@ -63,8 +63,8 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
           onChange={(event) => handleLanguageChange(event.target.value)}
           className="cursor-pointer border border-black rounded-sm bg-transparent px-3 "
         >
-          <option value="fr">FRANÇAIS</option>
-          <option value="en">ENGLISH</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
         </select>
       </div>
       <SideBar />
