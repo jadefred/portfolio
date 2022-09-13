@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { IProjects } from "../interface";
 import usePreferenceStatus from "../Context";
 import arrow from "../assets/images/arrow-white.svg";
@@ -10,8 +10,6 @@ interface IProps {
 
 const ProjectDetails: FC<IProps> = ({ project }) => {
   const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
-
-  console.log(projectDetails);
 
   //freeze body from scrolling when modal is there
   if (projectDetails[project.id]) {
@@ -28,23 +26,30 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
     <div className="modal">
       <div onClick={() => closeModal(project.id)} className="modal bg-transparentBlack animate-overlayBlack"></div>
       <div className="modal--content border right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 h-2/3 m-auto border-black bg-bgColor">
-        {/* Content of project details */}
-        <div className="flex flex-col">
+        {/* Content */}
+        <div className="flex flex-col relative">
           {/* cross svg */}
           <img
             src={cross}
             alt="close project details"
-            onClick={() => toogleProjectDetails(project.id)}
-            className="w-8 cursor-pointer"
+            onClick={() => closeModal(project.id)}
+            className="w-8 cursor-pointer absolute right-2 top-2"
           />
+          {/* Details */}
           <div className="flex flex-col gap-y-5 text-left">
+            {/* Screenshot */}
+            <div className="aspect-video overflow-hidden">
+              <img src={project.gif} alt={`screenshot of ${project.name}`} className="w-full"/>
+            </div>
+
+            {/* Name, skills, description */}
             <div>
               <h2 className="text-xl font-semibold">{project.name}</h2>
               <p>{project.skills}</p>
+              {language === "en" ? <p>{project.detailsEN}</p> : <p>{project.detailsFR}</p>}
             </div>
-            {language === "en" ? <p>{project.detailsEN}</p> : <p>{project.detailsFR}</p>}
 
-            {/* Code and demo */}
+            {/* Link of code and / or demo */}
             <div className="flex">
               <div className="flex bg-black relative px-4 py-1 group rounded">
                 <a
@@ -81,9 +86,6 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
                 </div>
               )}
             </div>
-          </div>
-          <div>
-            <img src={project.image} alt={`screenshot of ${project.name}`} />
           </div>
         </div>
       </div>

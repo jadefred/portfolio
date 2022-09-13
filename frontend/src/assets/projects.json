@@ -6,6 +6,7 @@
     "url": "https://jadefred.github.io/OpenClassrooms_P2_Booki/",
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
     "image": "images/pj2-booki.png",
+    "gif":"gif/ohmyfoodGIF.gif",
     "detailsEN": "Booki is a ",
     "detailsFR": "Bookie est une maquette de site web d'une agence de voyage"
   },
@@ -16,6 +17,7 @@
     "url": "https://jadefred.github.io/PuiYuFredenucci_3_13032022/",
     "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
     "image": "images/pj3-ohmyfood.png",
+    "gif":"gif/ohmyfoodGIF.gif",
     "detailsEN": "This is ohmyfood",
     "detailsFR": "C'est ohmyfood"
   },
@@ -26,6 +28,7 @@
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
     "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
+    "gif":"gif/ohmyfoodGIF.gif",
     "detailsEN": "This is piiquante",
     "detailsFR": "C'est piiquante"
   },
@@ -36,6 +39,7 @@
     "url": "https://jadefred.github.io/typescript_react_tic_tac_toe/",
     "code": "https://github.com/jadefred/typescript_react_tic_tac_toe",
     "image": "images/tictactoe.png",
+    "gif":"gif/ohmyfoodGIF.gif",
     "detailsEN": "This is tic tac toe",
     "detailsFR": "C'est tic tac toe"
   },
@@ -46,6 +50,7 @@
     "url": "",
     "code": "https://github.com/jadefred/react_recreate_Kanap",
     "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
+    "gif":"gif/ohmyfoodGIF.gif",
     "detailsEN": "This is kanap",
     "detailsFR": "C'est kanap"
   },
@@ -56,6 +61,7 @@
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
     "image": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-528127648-scaled.jpg",
+    "gif":"gif/ohmyfoodGIF.gif",
     "detailsEN": "This is Groupomania",
     "detailsFR": "C'est Groupomania"
   }

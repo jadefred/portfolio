@@ -39,7 +39,7 @@ const Projects: FC = () => {
                   </div>
 
                   {/* project's details */}
-                  <div className={`flex bg-black relative px-4 py-1 group rounded ${language === "en" ? "w-32" : "w-[9.5rem]"}`}>
+                  <div className={`flex bg-black relative px-4 py-1 group rounded cursor-pointer ${language === "en" ? "w-32" : "w-[9.5rem]"}`}>
                     <p
                       onClick={() => toogleProjectDetails(project.id)}
                       className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
