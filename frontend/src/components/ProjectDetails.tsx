@@ -25,32 +25,34 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
   return (
     <div className="modal">
       <div onClick={() => closeModal(project.id)} className="modal bg-transparentBlack animate-overlayBlack"></div>
-      <div className="modal--content border right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 h-2/3 m-auto border-black bg-bgColor">
+      <div className="modal--content border right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 inline-table m-auto bg-bgColor">
         {/* Content */}
-        <div className="flex flex-col relative">
+        <div className="flex flex-col justify-between relative h-full">
           {/* cross svg */}
-          <img
-            src={cross}
-            alt="close project details"
-            onClick={() => closeModal(project.id)}
-            className="w-8 cursor-pointer absolute right-2 top-2"
-          />
+          <div className="flex justify-end my-1 pr-1">
+            <img
+              src={cross}
+              alt="close project details"
+              onClick={() => closeModal(project.id)}
+              className="w-7 cursor-pointer"
+            />
+          </div>
           {/* Details */}
-          <div className="flex flex-col gap-y-5 text-left">
-            {/* Screenshot */}
+          <div className="flex flex-col h-full justify-between">
+            {/* Screenshot gif */}
             <div className="aspect-video overflow-hidden">
-              <img src={project.gif} alt={`screenshot of ${project.name}`} className="w-full"/>
+              <img src={project.gif} alt={`screenshot of ${project.name}`} className="w-full" />
             </div>
 
             {/* Name, skills, description */}
-            <div>
+            <div className="text-left mt-2 px-4">
               <h2 className="text-xl font-semibold">{project.name}</h2>
-              <p>{project.skills}</p>
-              {language === "en" ? <p>{project.detailsEN}</p> : <p>{project.detailsFR}</p>}
+              <p className="mb-5">{project.skills}</p>
+              {language === "en" ? <p className="mb-5">{project.detailsEN}</p> : <p className="mb-5">{project.detailsFR}</p>}
             </div>
 
             {/* Link of code and / or demo */}
-            <div className="flex">
+            <div className="flex px-4 mb-5">
               <div className="flex bg-black relative px-4 py-1 group rounded">
                 <a
                   href={project.code}
