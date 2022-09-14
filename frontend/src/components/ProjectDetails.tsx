@@ -39,7 +39,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
           <div className="flex flex-col h-full justify-between">
             {/* Screenshot gif */}
             <div className="aspect-video overflow-hidden">
-              <img src={project.gif} alt={`screenshot of ${project.name}`} className="w-full" />
+              <img src={require(`../assets/images/${project.gif}`)} alt={`gif of ${project.name}`} className="w-full" />
             </div>
 
             {/* Name, skills, description */}
