@@ -5,7 +5,7 @@
     "skills": "HTML / CSS",
     "url": "https://jadefred.github.io/OpenClassrooms_P2_Booki/",
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
-    "image": "images/pj2-booki.png",
+    "image": "pj2-booki",
     "gif": "gif/bookiGIF.gif",
     "detailsEN": "Booki is a ",
     "detailsFR": "Bookie est une maquette de site web d'une agence de voyage"
@@ -16,7 +16,7 @@
     "skills": "HTML / CSS / SCSS",
     "url": "https://jadefred.github.io/PuiYuFredenucci_3_13032022/",
     "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
-    "image": "images/pj3-ohmyfood.png",
+    "image": "pj3-ohmyfood",
     "gif": "gif/ohmyfoodGIF.gif",
     "detailsEN": "This is ohmyfood",
     "detailsFR": "C'est ohmyfood Use background-size: cover; to cover the entire element, while maintaining the aspect ratio: .background-1, .background-2, .background-3 { /* Set the .."
@@ -27,7 +27,7 @@
     "skills": "NodeJS / Express / MongoDB",
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
-    "image": "images/pj6-piiquante.png",
+    "image": "pj6-piiquante",
     "gif": "gif/piiquanteGIF.gif",
     "detailsEN": "This is piiquante",
     "detailsFR": "C'est piiquante"
@@ -38,7 +38,7 @@
     "skills": "React / TypeScript / Redux",
     "url": "",
     "code": "https://github.com/jadefred/react_recreate_Kanap",
-    "image": "images/pj5-kanap.png",
+    "image": "pj5-kanap",
     "gif": "gif/kanapGIF.gif",
     "detailsEN": "This is kanap",
     "detailsFR": "C'est kanap"
@@ -49,7 +49,7 @@
     "skills": "React / TypeScript / NodeJS / Express / TailwindCSS / PostgreSQL",
     "url": "",
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
-    "image": "images/pj7-groupomania.png",
+    "image": "pj7-groupomania",
     "gif": "gif/groupomaniaGIF.gif",
     "detailsEN": "This is Groupomania",
     "detailsFR": "C'est Groupomania"

@@ -16,7 +16,7 @@ const Projects: FC = () => {
         <h2 className="section-title__h2">{t("projects")}</h2>
       </span>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projectsList &&
           projectsList.map((project: IProjects) => {
             return (
@@ -25,9 +25,8 @@ const Projects: FC = () => {
                 className="relative project-container h-72 border-2 border-black after:absolute after:bg-black after:top-2.5 after:left-2.5 after:-right-2.5 after:-bottom-2.5 after:-z-20"
               >
                 {/* image */}
-
                 <img
-                  src={project.image}
+                  src={require(`../assets/images/screenshots/${project.image}.png`)}
                   alt={project.name}
                   className="project-image opacity-100 w-full h-full object-cover transition duration-500"
                 />
