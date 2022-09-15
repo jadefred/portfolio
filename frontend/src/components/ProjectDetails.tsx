@@ -28,7 +28,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
         onClick={() => closeModal(project.id)}
         className="modal bg-transparentBlack backdrop-blur-sm animate-overlayBlack"
       ></div>
-      <div className="modal--content border-4 right-0 left-0 top-0 bottom-0 w-11/12 md:w-1/2 inline-table m-auto bg-bgColor border-black">
+      <div className="modal--content border-4 right-0 left-0 top-0 bottom-0 w-11/12 md:w-2/3 inline-table m-auto bg-bgColor border-black">
         {/* Content */}
         <div className="flex flex-col justify-between relative h-full">
           {/* cross svg */}
@@ -38,7 +38,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
           {/* Details */}
           <div className="flex flex-col h-full justify-between">
             {/* Screenshot gif */}
-            <div className="aspect-video overflow-hidden">
+            <div className="aspect-video lg:w-10/12 overflow-hidden mx-auto">
               <img src={require(`../assets/images/${project.gif}`)} alt={`gif of ${project.name}`} className="w-full" />
             </div>
 

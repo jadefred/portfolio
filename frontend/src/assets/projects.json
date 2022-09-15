@@ -7,7 +7,7 @@
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
     "image": "pj2-booki",
     "gif": "gif/bookiGIF.gif",
-    "detailsEN": "Booki is a ",
+    "detailsEN": "This is the implementation of the wireframe of an travel agency - Booki.",
     "detailsFR": "Bookie est une maquette de site web d'une agence de voyage"
   },
   {
@@ -18,7 +18,7 @@
     "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
     "image": "pj3-ohmyfood",
     "gif": "gif/ohmyfoodGIF.gif",
-    "detailsEN": "This is ohmyfood",
+    "detailsEN": "The implementation of wireframe of ohmyfood is to showcase all the animations could be made before integrating with actual functionality.",
     "detailsFR": "C'est ohmyfood Use background-size: cover; to cover the entire element, while maintaining the aspect ratio: .background-1, .background-2, .background-3 { /* Set the .."
   },
   {
@@ -29,7 +29,7 @@
     "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
     "image": "pj6-piiquante",
     "gif": "gif/piiquanteGIF.gif",
-    "detailsEN": "This is piiquante",
+    "detailsEN": "This project aimed at building a back-end environment for a commercial site - Piiquante. The web server and database handle the data editing, such as account registration, post-creation, image upload, user interaction (like / dislike a post).",
     "detailsFR": "C'est piiquante"
   },
   {
@@ -40,7 +40,7 @@
     "code": "https://github.com/jadefred/react_recreate_Kanap",
     "image": "pj5-kanap",
     "gif": "gif/kanapGIF.gif",
-    "detailsEN": "This is kanap",
+    "detailsEN": "This is a front-end project aimed at building the interface for Kanap - a commercial website. Users can access product details by clicking the image, all selected products will be shown in cart, before finishing the order, users can modify the selected product.",
     "detailsFR": "C'est kanap"
   },
   {
@@ -51,7 +51,7 @@
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
     "image": "pj7-groupomania",
     "gif": "gif/groupomaniaGIF.gif",
-    "detailsEN": "This is Groupomania",
+    "detailsEN": "This is a full-stack project aimed at building a social network for the employees of Groupomania. Users could join the network by simply creating an account. Afterward, users could create, edit or delete their own posts as well as interact with others by liking or commenting on other users' posts.",
     "detailsFR": "C'est Groupomania"
   }
 ]
