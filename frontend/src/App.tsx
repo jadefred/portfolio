@@ -9,17 +9,7 @@ import Contact from "./components/Contact";
 
 const App: FC = () => {
   console.log("app rendered");
-  //const [projectDetails, setProjectDetails] = useState<IUnknownObjectKey>({});
-
-  //toggle project's details modal, map id key to target clicked element
-  // const toggleComment = useCallback((id: string) => {
-  //   setProjectDetails((prev) => (Boolean(!prev[id]) ? { ...prev, [id]: true } : { ...prev, [id]: false }));
-  // }, []);
-
-  // console.log(projectDetails);
-
-  //toggleComment={toggleComment} projectDetails={projectDetails} setProjectDetails={setProjectDetails}
-
+  
   return (
     <>
       <div id="home"></div>
