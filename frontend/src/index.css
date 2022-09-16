@@ -18,7 +18,7 @@
   }
 
   .section-title__span {
-    @apply before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 relative inline-block mb-12;
+    @apply before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 dark:before:bg-amber-300 relative inline-block mb-12;
   }
 
   .section-title__h2 {
@@ -52,7 +52,7 @@
     @apply border-2 dark:bg-darkInputBg border-black dark:border-bgColor rounded-sm focus:outline focus:outline-offset-[3px] focus:outline-2 focus:outline-black dark:focus:outline-bgColor p-3;
   }
   .contact__errorMessage {
-    @apply absolute text-sm text-rose-800;
+    @apply absolute text-sm text-rose-800 dark:text-rose-400;
   }
 }
 

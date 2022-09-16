@@ -21,11 +21,10 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
 
   //add or remove dark mode class once loaded
   useEffect(() => {
-    if (darkMode === "false") {
-      document.documentElement.classList.remove("dark");
-    }
     if (darkMode === "true") {
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 

@@ -17,7 +17,7 @@ module.exports = {
         bgColor: "#fffcf2",
         linkedinBlue: "#0e76a8",
         transparentBlack: "rgba(78, 78, 78, 0.8)",
-        darkModeBgColor: "#374151",
+        darkModeBgColor: "#364052",
         darkModeText: "#fffcf2",
         darkInputBg: "rgba(255, 255, 255, 0.1)",
       },
@@ -25,6 +25,7 @@ module.exports = {
         slide: "slide 300ms ease-in-out both",
         ping: "ping 0.8s ease-in-out infinite both",
         overlay: "overlay 150ms linear",
+        overlayDarkMode: "overlayDarkMode 150ms linear",
         overlayBlack: "overlayBlack 150ms linear",
         slideTop: "slideTop 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both",
       },
@@ -41,6 +42,10 @@ module.exports = {
         overlay: {
           "0%": { backgroundColor: "rgba(255, 255, 255, 0.25)" },
           "100%": { backgroundColor: "rgba(255, 255, 255, 1)" },
+        },
+        overlayDarkMode: {
+          "0%": { backgroundColor: "rgba(54, 64, 82, 0.25)" },
+          "100%": { backgroundColor: "rgba(54, 64, 82, 1)" },
         },
         overlayBlack: {
           "0%": { backgroundColor: "rgba(78, 78, 78, 0.25)" },

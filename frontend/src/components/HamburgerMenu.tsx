@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Hamburger from "hamburger-react";
-// import "../styles/modal.css";
 import Menu from "./Menu";
 import usePreferenceStatus from "../Context";
 
@@ -23,7 +22,7 @@ const HamburgerMenu: FC<IScroll> = ({ scrolled }) => {
 
       {modal && (
         <div className="modal">
-          <div className="modal animate-overlay flex justify-end bg-bgColor dark:bg-darkModeBgColor">
+          <div className="modal animate-overlay dark:animate-overlayDarkMode flex justify-end bg-bgColor dark:bg-darkModeBgColor">
             <div className="mt-3 pr-5">
               <Hamburger toggled={modal} toggle={hamburgerToggle} size={26} />
             </div>

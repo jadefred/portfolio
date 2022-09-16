@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 
 const App: FC = () => {
   console.log("app rendered");
-  
+
   return (
     <>
       <div id="home"></div>

@@ -7,12 +7,12 @@ import css from "../assets/images/skills/css.svg";
 import js from "../assets/images/skills/js.svg";
 import sass from "../assets/images/skills/sass.svg";
 import node from "../assets/images/skills/node.svg";
-import mongodb from "../assets/images/skills/mongodb.svg";
 import react from "../assets/images/skills/react.svg";
 import typescript from "../assets/images/skills/typescript.svg";
 import redux from "../assets/images/skills/redux.svg";
 import postgresql from "../assets/images/skills/postgresql.svg";
 import tailwind from "../assets/images/skills/tailwind.svg";
+import mongoDB from "../assets/images/skills/mongo.svg";
 
 const Skills: FC = () => {
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ const Skills: FC = () => {
 
         <div className="skills-icons-container">
           <div className="skills-icons-size">
-            <img src={mongodb} alt="MongoDB" className="w-full" />
+            <img src={mongoDB} alt="MongoDB" className="w-full" />
           </div>
           <p>MongoDB</p>
         </div>
