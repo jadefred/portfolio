@@ -22,7 +22,7 @@ const Projects: FC = () => {
             return (
               <div
                 key={project.id}
-                className="relative project-container h-72 border-2 border-black after:absolute after:bg-black after:top-2.5 after:left-2.5 after:-right-2.5 after:-bottom-2.5 after:-z-20"
+                className="relative project-container h-72 border-2 dark:text-black border-black after:absolute after:bg-black dark:after:bg-bgColor after:top-2.5 after:left-2.5 after:-right-2.5 after:-bottom-2.5 after:-z-20"
               >
                 {/* image */}
                 <img

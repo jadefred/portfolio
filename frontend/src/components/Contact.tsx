@@ -211,7 +211,7 @@ const Contact: FC = () => {
               className={`my-8 font-semibold text-xl border-2 py-2.5 px-4 tracking-wider transition-colors ${
                 btnDisable
                   ? "border-emerald-700 bg-emerald-700 opacity-70 text-bgColor cursor-default"
-                  : "cursor-pointer border-black hover:bg-black hover:text-bgColor"
+                  : "cursor-pointer border-black dark:border-bgColor hover:bg-black dark:hover:bg-bgColor hover:text-bgColor dark:hover:text-black"
               }`}
               disabled={btnDisable}
             />

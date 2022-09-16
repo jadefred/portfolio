@@ -19,6 +19,7 @@ module.exports = {
         transparentBlack: "rgba(78, 78, 78, 0.8)",
         darkModeBgColor: "#374151",
         darkModeText: "#fffcf2",
+        darkInputBg: "rgba(255, 255, 255, 0.1)",
       },
       animation: {
         slide: "slide 300ms ease-in-out both",

@@ -7,7 +7,7 @@
     "code": "https://github.com/jadefred/OpenClassrooms_P2_Booki",
     "image": "pj2-booki",
     "gif": "gif/bookiGIF.gif",
-    "detailsEN": "This is the implementation of the wireframe of an travel agency - Booki.",
+    "detailsEN": "This is the implementation of the website design of a travel agency - Booki.",
     "detailsFR": "Ce projet demandait l'intégration responsive d'une maquette."
   },
   {
@@ -18,7 +18,7 @@
     "code": "https://github.com/jadefred/PuiYuFredenucci_3_13032022",
     "image": "pj3-ohmyfood",
     "gif": "gif/ohmyfoodGIF.gif",
-    "detailsEN": "The implementation of wireframe of ohmyfood is to showcase all the animations could be made before integrating with actual functionality.",
+    "detailsEN": "This is an implementation of a website design to showcase all the animations before the integration of functionalities.",
     "detailsFR": "Cette maquette a pour but de présenter toutes les animations avant l'intégration de fonctionnalité."
   },
   {
@@ -29,7 +29,7 @@
     "code": "https://github.com/jadefred/OpenClassrooms_P6_Piiquante",
     "image": "pj6-piiquante",
     "gif": "gif/piiquanteGIF.gif",
-    "detailsEN": "This project aimed at building a secured back-end environment for a commercial site - Piiquante. The web server and database handle the data editing, such as account registration, post-creation, image upload, user interaction (like / dislike a post).",
+    "detailsEN": "This project aims to build a secure back-end environment for a commercial website - Piiquante. The web server and database handle the data editing, such as account registration, post-creation, image upload, user interaction (like / dislike a post).",
     "detailsFR": "L'objectif de ce projet est de construire une API sécurisée pour une application d'avis gastronomiques. Les clients peuvent créer leurs comptes dans la page du site, ainsi ils peuvent créer un post pour leurs sauces de piment préférées avec une image et des descriptions. Ce site donne aussi la possibilité de modifier, liker / disliker et supprimer une sauce."
   },
   {
@@ -40,7 +40,7 @@
     "code": "https://github.com/jadefred/react_recreate_Kanap",
     "image": "pj5-kanap",
     "gif": "gif/kanapGIF.gif",
-    "detailsEN": "This is a aimed at building the front-end environment for Kanap - a commercial website. Users can access product details by clicking the image, all selected products will be shown in cart, before placing the order, users can modify the selected product.",
+    "detailsEN": "This project aims to build the front-end environment for Kanap - a commercial website. Users can access product details by clicking the image, all selected products will be shown in cart, before placing the order, users can modify the selected product.",
     "detailsFR": "Ce projet est destiné à construire l'environnement front-end d'un site e-commerce en React. Les clients peuvent lire les détails des produits en cliquant sur les images, tous les produits sélectionnés seront affichés dans le panier. Avant de confirmer la commande, les utilisateurs peuvent modifier leurs produits sélectionnées dans la page du panier."
   },
   {
@@ -51,7 +51,7 @@
     "code": "https://github.com/jadefred/OpenClassrooms_P7_Groupomania",
     "image": "pj7-groupomania",
     "gif": "gif/groupomaniaGIF.gif",
-    "detailsEN": "This is a full-stack project aimed at building a social network for the employees of a company. Users could join the network by simply creating an account. Afterward, users could create, edit or delete their own posts as well as interact with others by liking or commenting on other users' posts.",
+    "detailsEN": "This is a full-stack project aimed at building a social network for the employees of a company. Users can join the network by simply creating an account. Afterward, users can create, edit or delete their own posts as well as interact with others by liking or commenting on other users' posts.",
     "detailsFR": "L'objectif de ce projet est de construire un réseau social interne pour les employés d'une entreprise. Les utilisateurs peuvent créer, modifier et supprimer leurs comptes, ainsi ils peuvent créer un post avec du texte ou une image. Ce site donne aussi la possibilité de modifier, liker, commenter ou supprimer un post."
   }
 ]
