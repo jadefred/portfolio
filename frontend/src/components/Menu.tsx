@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
@@ -19,15 +19,24 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
     localStorage.setItem("lng", lang);
   };
 
+  //add or remove dark mode class once loaded
+  useEffect(() => {
+    if (darkMode === "false") {
+      document.documentElement.classList.remove("dark");
+    }
+    if (darkMode === "true") {
+      document.documentElement.classList.add("dark");
+    }
+  }, [darkMode]);
+
+  //toggle dark mode, update context and local storage
   const handleDarkMode = (): void => {
     if (darkMode === "false") {
       toggleDarkMode("true");
       localStorage.setItem("darkMode", "true");
-      document.documentElement.classList.add("dark");
     } else {
       toggleDarkMode("false");
       localStorage.setItem("darkMode", "false");
-      document.documentElement.classList.remove("dark");
     }
   };
 
