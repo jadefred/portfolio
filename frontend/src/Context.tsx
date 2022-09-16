@@ -6,16 +6,19 @@ const initialState: IContext = {
   language: localStorage.getItem("lng") || "fr",
   modal: false,
   projectDetails: {},
+  darkMode: localStorage.getItem("darkMode") || "false",
 };
 
 type Action = {
   language: IContext["language"];
   modal: IContext["modal"];
+  projectDetails: IContext["projectDetails"];
+  darkMode: IContext["darkMode"];
   changeLanguage: (language: string) => void;
   hamburgerToggle: React.Dispatch<SetStateAction<boolean>>;
-  toogleModal: (modal: boolean) => void;
-  projectDetails: IContext["projectDetails"];
-  toogleProjectDetails: (project_id: string) => void;
+  toggleModal: (modal: boolean) => void;
+  toggleProjectDetails: (project_id: string) => void;
+  toggleDarkMode: (darkMode: string) => void;
 };
 
 const PreferenceContext = createContext({} as Action);
@@ -47,9 +50,9 @@ export const PreferenceProvider = ({ children }: IProps) => {
     });
   };
 
-  const toogleModal = (modal: boolean) => {
+  const toggleModal = (modal: boolean) => {
     dispatch({
-      type: UserActionKind.TOOGLEMODAL,
+      type: UserActionKind.TOGGLEMODAL,
       payload: {
         ...state,
         modal: !modal,
@@ -57,12 +60,22 @@ export const PreferenceProvider = ({ children }: IProps) => {
     });
   };
 
-  const toogleProjectDetails = (project_id: string) => {
+  const toggleProjectDetails = (project_id: string) => {
     dispatch({
-      type: UserActionKind.TOOGLEPROJECTDETAILS,
+      type: UserActionKind.TOGGLEPROJECTDETAILS,
       payload: {
         ...state,
         projectDetails: { ...state.projectDetails, [project_id]: Boolean(!state.projectDetails[project_id]) },
+      },
+    });
+  };
+
+  const toggleDarkMode = (darkMode: string) => {
+    dispatch({
+      type: UserActionKind.TOGGLEDARKMODE,
+      payload: {
+        ...state,
+        darkMode: darkMode,
       },
     });
   };
@@ -71,10 +84,12 @@ export const PreferenceProvider = ({ children }: IProps) => {
     language: state.language,
     modal: state.modal,
     projectDetails: state.projectDetails,
+    darkMode: state.darkMode,
     changeLanguage,
     hamburgerToggle,
-    toogleModal,
-    toogleProjectDetails,
+    toggleModal,
+    toggleProjectDetails,
+    toggleDarkMode,
   };
 
   return <PreferenceContext.Provider value={value}>{children}</PreferenceContext.Provider>;

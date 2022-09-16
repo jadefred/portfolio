@@ -10,7 +10,7 @@ interface IScroll {
 
 const Menu: FC<IScroll> = ({ scrolled }) => {
   const { t, i18n } = useTranslation();
-  const { language, changeLanguage, modal, toogleModal } = usePreferenceStatus();
+  const { language, changeLanguage, modal, toggleModal, darkMode, toggleDarkMode } = usePreferenceStatus();
 
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
@@ -18,6 +18,19 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("lng", lang);
   };
+
+  const handleDarkMode = (): void => {
+    console.log("clicked")
+    if (darkMode === "false") {
+      toggleDarkMode("true");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      toggleDarkMode("false");
+      localStorage.setItem("darkMode", "false");
+    }
+  };
+
+  console.log(darkMode)
 
   return (
     <div
@@ -27,28 +40,28 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
     >
       <div>
         <Link to="home" spy={true} smooth={true} offset={-30} duration={500}>
-          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+          <p onClick={() => toggleModal(modal)} className="cursor-pointer">
             {t("home")}
           </p>
         </Link>
       </div>
       <div>
         <Link to="projects" spy={true} smooth={true} offset={-80} duration={500}>
-          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+          <p onClick={() => toggleModal(modal)} className="cursor-pointer">
             {t("projects")}
           </p>
         </Link>
       </div>
       <div>
         <Link to="skills" spy={true} smooth={true} offset={-80} duration={500}>
-          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+          <p onClick={() => toggleModal(modal)} className="cursor-pointer">
             {t("skills")}
           </p>
         </Link>
       </div>
       <div>
         <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
-          <p onClick={() => toogleModal(modal)} className="cursor-pointer">
+          <p onClick={() => toggleModal(modal)} className="cursor-pointer">
             Contact
           </p>
         </Link>
@@ -66,6 +79,10 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
           <option value="fr">Français</option>
           <option value="en">English</option>
         </select>
+      </div>
+
+      <div>
+        <button onClick={handleDarkMode}>Dark mode</button>
       </div>
       <SideBar />
     </div>

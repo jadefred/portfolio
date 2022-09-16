@@ -8,7 +8,7 @@ import usePreferenceStatus from "../Context";
 
 const Projects: FC = () => {
   const { t } = useTranslation();
-  const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
+  const { projectDetails, toggleProjectDetails, language } = usePreferenceStatus();
 
   return (
     <div className="section-title" id="projects">
@@ -46,7 +46,7 @@ const Projects: FC = () => {
                     }`}
                   >
                     <p
-                      onClick={() => toogleProjectDetails(project.id)}
+                      onClick={() => toggleProjectDetails(project.id)}
                       className="text-white text-lg transition duration-300 ease-linear group-hover:-translate-x-1"
                     >
                       {t("learnMore")}

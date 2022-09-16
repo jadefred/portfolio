@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const ProjectDetails: FC<IProps> = ({ project }) => {
-  const { projectDetails, toogleProjectDetails, language } = usePreferenceStatus();
+  const { projectDetails, toggleProjectDetails, language } = usePreferenceStatus();
 
   //freeze body from scrolling when modal is there
   if (projectDetails[project.id]) {
@@ -18,7 +18,7 @@ const ProjectDetails: FC<IProps> = ({ project }) => {
 
   //function to update projectDetails object and remove modal class to unfreeze body
   const closeModal = (id: string) => {
-    toogleProjectDetails(id);
+    toggleProjectDetails(id);
     document.body.classList.remove("active-modal");
   };
 
