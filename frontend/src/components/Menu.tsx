@@ -33,7 +33,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
 
   return (
     <div
-      className={`flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row relative ${
+      className={`flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row relative dark:text-darkModeText ${
         scrolled ? "md:gap-x-8" : "md:gap-x-10 "
       }`}
     >
@@ -73,7 +73,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
           name="lang-select"
           value={language}
           onChange={(event) => handleLanguageChange(event.target.value)}
-          className="cursor-pointer border border-black rounded-sm bg-transparent px-3 "
+          className="cursor-pointer border border-black dark:border-darkModeText rounded-sm bg-transparent px-3 "
         >
           <option value="fr">Français</option>
           <option value="en">English</option>

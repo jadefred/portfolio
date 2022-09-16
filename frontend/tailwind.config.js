@@ -17,6 +17,8 @@ module.exports = {
         bgColor: "#fffcf2",
         linkedinBlue: "#0e76a8",
         transparentBlack: "rgba(78, 78, 78, 0.8)",
+        darkModeBgColor: "#374151",
+        darkModeText: "#fffcf2",
       },
       animation: {
         slide: "slide 300ms ease-in-out both",
@@ -57,12 +59,13 @@ module.exports = {
         "130px": "130px",
         "250px": "250px",
         "280px": "280px",
+        "35%": "35%",
         "40%": "40%",
         "56.25%": "56.25%",
-        "9.5rem": "9.5rem"
+        "9.5rem": "9.5rem",
       },
     },
   },
   plugins: [],
-  darkMode: 'class',
+  darkMode: "class",
 };

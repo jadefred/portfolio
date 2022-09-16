@@ -7,7 +7,7 @@ const SideBar: FC = () => {
         href="https://github.com/jadefred"
         target="_blank"
         rel="noopener noreferrer"
-        className="border-[1.5px] border-black p-[7px] rounded-full group hover:bg-black mx-auto transition duration-200 ease-in-out"
+        className="border-[1.5px] border-black dark:border-darkModeText dark:hover:border-black p-[7px] rounded-full group hover:bg-black mx-auto transition duration-200 ease-in-out"
       >
         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_9_24)">
@@ -17,7 +17,7 @@ const SideBar: FC = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="group-hover:stroke-bgColor transition duration-150 ease-in-out"
+              className="group-hover:stroke-bgColor dark:stroke-darkModeText transition duration-150 ease-in-out"
             />
           </g>
           <defs>
@@ -32,7 +32,7 @@ const SideBar: FC = () => {
         href="https://www.linkedin.com/in/jade-fredenucci"
         target="_blank"
         rel="noopener noreferrer"
-        className="border-[1.5px] border-black p-2 rounded-full group hover:bg-linkedinBlue hover:border-linkedinBlue mx-auto transition duration-200 ease-in-out"
+        className="border-[1.5px] border-black dark:border-darkModeText p-2 rounded-full group hover:bg-linkedinBlue hover:border-linkedinBlue dark:hover:border-linkedinBlue mx-auto transition duration-200 ease-in-out"
       >
         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_8_4)">

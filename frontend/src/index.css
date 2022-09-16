@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-bgColor dark:bg-gray-700 font-sans;
+    @apply bg-bgColor dark:bg-darkModeBgColor dark:text-darkModeText font-sans transition-colors;
   }
   h1 {
     @apply font-display;
@@ -33,7 +33,7 @@
     @apply flex flex-col items-center gap-y-5 tracking-wide font-medium;
   }
   .sidebar--linkedin-svg {
-    @apply group-hover:fill-bgColor transition duration-150 ease-in-out;
+    @apply group-hover:fill-bgColor dark:fill-darkModeText transition duration-150 ease-in-out;
   }
 
   /* modal's class - hamburger menu */
