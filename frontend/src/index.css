@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-bgColor font-sans;
+    @apply bg-bgColor dark:bg-gray-700 font-sans;
   }
   h1 {
     @apply font-display;

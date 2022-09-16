@@ -20,17 +20,16 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
   };
 
   const handleDarkMode = (): void => {
-    console.log("clicked")
     if (darkMode === "false") {
       toggleDarkMode("true");
       localStorage.setItem("darkMode", "true");
+      document.documentElement.classList.add("dark");
     } else {
       toggleDarkMode("false");
       localStorage.setItem("darkMode", "false");
+      document.documentElement.classList.remove("dark");
     }
   };
-
-  console.log(darkMode)
 
   return (
     <div
