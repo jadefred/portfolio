@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
 import { Link } from "react-scroll";
+import moon from "../assets/images/moon.svg";
+import sun from "../assets/images/sun.svg";
 
 interface IScroll {
   scrolled: boolean;
@@ -88,9 +90,16 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
         </select>
       </div>
 
-      <div>
-        <button onClick={handleDarkMode}>Dark mode</button>
+      <div className="flex items-center gap-x-2">
+        <div onClick={handleDarkMode} className="w-7 h-7 flex justify-center items-center cursor-pointer">
+          {darkMode === "true" ? (
+            <img src={moon} alt="dark mode" className="w-6 h-6" />
+          ) : (
+            <img src={sun} alt="light mode" className="w-full h-full" />
+          )}
+        </div>
       </div>
+
       <SideBar />
     </div>
   );
