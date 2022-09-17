@@ -1,10 +1,14 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
 import { Link } from "react-scroll";
+
+//svg
 import moon from "../assets/images/moon.svg";
 import sun from "../assets/images/sun.svg";
+import arrowDownBlack from "../assets/images/arrow-down-black.svg";
+import arrowDownWhite from "../assets/images/arrow-down-white.svg";
 
 interface IScroll {
   scrolled: boolean;
@@ -14,11 +18,15 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
   const { t, i18n } = useTranslation();
   const { language, changeLanguage, modal, toggleModal, darkMode, toggleDarkMode } = usePreferenceStatus();
 
+  //test
+  const [dropdown, setDropdown] = useState<boolean>(false);
+
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
     changeLanguage(lang);
     i18n.changeLanguage(lang);
     localStorage.setItem("lng", lang);
+    setDropdown(false);
   };
 
   //add or remove dark mode class once loaded
@@ -77,7 +85,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       </div>
 
       {/* language select */}
-      <div>
+      {/* <div>
         <label htmlFor="lang-select">{t("language")} : </label>
         <select
           name="lang-select"
@@ -88,6 +96,35 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
           <option value="fr">Français</option>
           <option value="en">English</option>
         </select>
+      </div> */}
+
+      <div className="flex gap-x-3">
+        <p>{t("language")} : </p>
+        <div className="relative">
+          <button
+            onClick={() => setDropdown(!dropdown)}
+            className="border-b w-24 border-black dark:border-bgColor flex justify-between pl-1"
+          >
+            {language === "fr" ? "Français" : "English"}
+            <img src={darkMode === "true" ? arrowDownWhite : arrowDownBlack} alt="Downward arrow" />
+          </button>
+          {dropdown && (
+            <div className="absolute flex flex-col text-center top-7 border border-gray-300">
+              <p
+                className={`bg-transparentWhite w-24 py-0.5 cursor-pointer ${language === "fr" ? "bg-green-400" : ""}`}
+                onClick={() => handleLanguageChange("fr")}
+              >
+                Français
+              </p>
+              <p
+                className={`bg-transparentWhite w-24 py-0.5 cursor-pointer ${language === "en" ? "bg-green-400" : ""}`}
+                onClick={() => handleLanguageChange("en")}
+              >
+                English
+              </p>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center gap-x-2">

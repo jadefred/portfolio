@@ -29,15 +29,15 @@ const Intro: FC = () => {
               sequence={[
                 "Une",
                 1000,
-                "Une développeuse",
+                "Une Développeuse",
                 1000,
-                "Une développeuse web",
+                "Une Développeuse Full-Stack",
                 1000,
-                "Une développeuse",
+                "Une Développeuse",
                 1000,
                 "Une",
                 1000,
-                "Une développeuse web",
+                "Une Développeuse Full-Stack",
                 1000,
               ]}
               wrapper="div"
@@ -49,7 +49,7 @@ const Intro: FC = () => {
 
           {language === "en" && (
             <TypeAnimation
-              sequence={["A", 1000, "A web", 1000, "A web developer", 1000, "A web", 1000, "A", 1000, "A web developer", 1000]}
+              sequence={["A", 1000, "A Full-Stack", 1000, "A Full-Stack Developer", 1000, "A Full-Stack", 1000, "A", 1000, "A Full-Stack Developer", 1000]}
               wrapper="div"
               cursor={true}
               repeat={0}
@@ -61,7 +61,7 @@ const Intro: FC = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="w-full sm:w-11/12" >{View}</div>
+          <div className="w-full sm:w-11/12">{View}</div>
         </div>
       </div>
     </>
