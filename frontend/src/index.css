@@ -54,6 +54,11 @@
   .contact__errorMessage {
     @apply absolute text-sm text-rose-800 dark:text-rose-400;
   }
+
+  /* Menu language dropdown */
+  .language__dropdown--elements {
+    @apply bg-white dark:bg-gray-900 w-24 py-1 cursor-pointer;
+  }
 }
 
 /* Projects hover effect */

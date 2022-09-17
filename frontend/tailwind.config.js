@@ -17,7 +17,7 @@ module.exports = {
         bgColor: "#fffcf2",
         linkedinBlue: "#0e76a8",
         transparentBlack: "rgba(78, 78, 78, 0.8)",
-        transparentWhite: "rgba(255, 255, 255, 0.9)",
+        transparentWhite: "rgba(255, 255, 255, 0.8)",
         darkModeBgColor: "#364052",
         darkModeText: "#fffcf2",
         darkInputBg: "rgba(255, 255, 255, 0.1)",

@@ -109,19 +109,27 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
             <img src={darkMode === "true" ? arrowDownWhite : arrowDownBlack} alt="Downward arrow" />
           </button>
           {dropdown && (
-            <div className="absolute flex flex-col text-center top-7 border border-gray-300">
-              <p
-                className={`bg-transparentWhite w-24 py-0.5 cursor-pointer ${language === "fr" ? "bg-green-400" : ""}`}
+            <div className="absolute flex flex-col text-center top-7 z-40">
+              <div
+                className={`language__dropdown--elements ${
+                  language === "fr"
+                    ? "bg-stone-200 hover:bg-stone-100 dark:bg-gray-400 dark:hover:bg-gray-300"
+                    : "hover:bg-stone-400 dark:hover:bg-gray-600"
+                }`}
                 onClick={() => handleLanguageChange("fr")}
               >
-                Français
-              </p>
-              <p
-                className={`bg-transparentWhite w-24 py-0.5 cursor-pointer ${language === "en" ? "bg-green-400" : ""}`}
+                <p>Français</p>
+              </div>
+              <div
+                className={`language__dropdown--elements ${
+                  language === "en"
+                    ? "bg-stone-200 hover:bg-stone-100 dark:bg-gray-400 dark:hover:bg-gray-300"
+                    : "hover:bg-stone-400 dark:hover:bg-gray-600"
+                }`}
                 onClick={() => handleLanguageChange("en")}
               >
-                English
-              </p>
+                <p>English</p>
+              </div>
             </div>
           )}
         </div>
