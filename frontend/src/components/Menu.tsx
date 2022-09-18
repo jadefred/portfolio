@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
 import { Link } from "react-scroll";
+import { animated, useTransition } from "@react-spring/web";
 
 //svg
 import moon from "../assets/images/moon.svg";
@@ -20,6 +21,13 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
   const [dropdown, setDropdown] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const dropdownButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  //react-spring to control the animation when mount and unmount of the dropdown menu
+  const transitions = useTransition(dropdown, {
+    from: { transformOrigin: "100% 0%", transform: "scaleY(0)", opacity: "0" },
+    enter: { transformOrigin: "100% 0%", transform: "scaleY(1)", opacity: "1" },
+    leave: { transformOrigin: "100% 0%", transform: "scaleY(0)", opacity: "0" },
+  });
 
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
@@ -114,15 +122,20 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
             {language === "fr" ? "Français" : "English"}
             <img src={darkMode === "true" ? arrowDownWhite : arrowDownBlack} alt="Downward arrow" />
           </button>
-          {dropdown && (
-            <div ref={dropdownRef} className="absolute flex flex-col text-center top-7 z-40">
-              <div className="language__dropdown--elements" onClick={() => handleLanguageChange("fr")}>
-                <p>Français</p>
-              </div>
-              <div className="language__dropdown--elements" onClick={() => handleLanguageChange("en")}>
-                <p>English</p>
-              </div>
-            </div>
+
+          {transitions((style, item) =>
+            item ? (
+              <animated.div style={style} ref={dropdownRef} className="absolute flex flex-col text-center top-7 z-40">
+                <div className="language__dropdown--elements" onClick={() => handleLanguageChange("fr")}>
+                  <p>Français</p>
+                </div>
+                <div className="language__dropdown--elements" onClick={() => handleLanguageChange("en")}>
+                  <p>English</p>
+                </div>
+              </animated.div>
+            ) : (
+              ""
+            )
           )}
         </div>
       </div>
