@@ -18,7 +18,7 @@
   }
 
   .section-title__span {
-    @apply before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 dark:before:bg-amber-300 relative inline-block mb-12;
+    @apply before:block before:absolute before:top-8 before:right-5 before:left-0 before:-bottom-1 before:bg-pink-500 dark:before:bg-teal-200 dark:before:bg-gradient-to-r dark:before:from-blue-500 dark:before:via-sky-300 dark:before:to-teal-400 relative inline-block mb-12;
   }
 
   .section-title__h2 {
@@ -57,7 +57,7 @@
 
   /* Menu language dropdown */
   .language__dropdown--elements {
-    @apply bg-white dark:bg-gray-900 w-24 py-1 cursor-pointer;
+    @apply w-24 py-1 cursor-pointer bg-stone-200 hover:bg-stone-400 dark:bg-gray-900 dark:hover:bg-gray-500;
   }
 }
 

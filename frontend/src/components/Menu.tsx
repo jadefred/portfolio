@@ -19,6 +19,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
   const { language, changeLanguage, modal, toggleModal, darkMode, toggleDarkMode } = usePreferenceStatus();
   const [dropdown, setDropdown] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownButtonRef = useRef<HTMLButtonElement | null>(null);
 
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
@@ -40,15 +41,19 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
   //click anywhere outside the dropdown menu to close it
   useEffect(() => {
     const handleDropdown = (event: MouseEvent) => {
-      if (!dropdownRef.current?.contains(event.target as HTMLElement)) {
+      //fire function if mouse event is outside dropdown menu and button while dropdown menu is opened
+      if (
+        !dropdownRef.current?.contains(event.target as HTMLElement) &&
+        !dropdownButtonRef.current?.contains(event.target as HTMLElement) &&
+        dropdown
+      ) {
         setDropdown(false);
       }
     };
 
     document.addEventListener("mousedown", handleDropdown);
-
     return () => document.removeEventListener("mousedown", handleDropdown);
-  });
+  }, [dropdown]);
 
   //toggle dark mode, update context and local storage
   const handleDarkMode = (): void => {
@@ -63,7 +68,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
 
   return (
     <div
-      className={`flex flex-col items-center gap-y-10 font-medium md:font-normal text-xl md:text-base md:flex-row relative dark:text-darkModeText ${
+      className={`flex flex-col items-center gap-y-10 text-xl md:text-base md:flex-row relative dark:text-darkModeText ${
         scrolled ? "md:gap-x-8" : "md:gap-x-10 "
       }`}
     >
@@ -98,24 +103,11 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       </div>
 
       {/* language select */}
-
-      {/* <div>
-        <label htmlFor="lang-select">{t("language")} : </label>
-        <select
-          name="lang-select"
-          value={language}
-          onChange={(event) => handleLanguageChange(event.target.value)}
-          className="cursor-pointer border border-black dark:border-darkModeText rounded-sm bg-transparent px-3 "
-        >
-          <option value="fr">Français</option>
-          <option value="en">English</option>
-        </select>
-      </div> */}
-
       <div className="flex gap-x-3">
         <p>{t("language")} : </p>
         <div className="relative">
           <button
+            ref={dropdownButtonRef}
             onClick={() => setDropdown((prev) => !prev)}
             className="border-b w-24 border-black dark:border-bgColor flex justify-between pl-1"
           >
@@ -124,24 +116,10 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
           </button>
           {dropdown && (
             <div ref={dropdownRef} className="absolute flex flex-col text-center top-7 z-40">
-              <div
-                className={`language__dropdown--elements ${
-                  language === "fr"
-                    ? "bg-stone-200 hover:bg-stone-100 dark:bg-gray-400 dark:hover:bg-gray-300"
-                    : "hover:bg-stone-400 dark:hover:bg-gray-600"
-                }`}
-                onClick={() => handleLanguageChange("fr")}
-              >
+              <div className="language__dropdown--elements" onClick={() => handleLanguageChange("fr")}>
                 <p>Français</p>
               </div>
-              <div
-                className={`language__dropdown--elements ${
-                  language === "en"
-                    ? "bg-stone-200 hover:bg-stone-100 dark:bg-gray-400 dark:hover:bg-gray-300"
-                    : "hover:bg-stone-400 dark:hover:bg-gray-600"
-                }`}
-                onClick={() => handleLanguageChange("en")}
-              >
+              <div className="language__dropdown--elements" onClick={() => handleLanguageChange("en")}>
                 <p>English</p>
               </div>
             </div>
@@ -149,14 +127,12 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
         </div>
       </div>
 
-      <div className="flex items-center gap-x-2">
-        <div onClick={handleDarkMode} className="w-7 h-7 flex justify-center items-center cursor-pointer">
-          {darkMode === "true" ? (
-            <img src={moon} alt="dark mode" className="w-6 h-6" />
-          ) : (
-            <img src={sun} alt="light mode" className="w-full h-full" />
-          )}
-        </div>
+      <div onClick={handleDarkMode} className="w-7 h-7 flex justify-center items-center cursor-pointer">
+        {darkMode === "true" ? (
+          <img src={moon} alt="dark mode" className="w-6 h-6" />
+        ) : (
+          <img src={sun} alt="light mode" className="w-full h-full" />
+        )}
       </div>
 
       <SideBar />
