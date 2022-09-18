@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import usePreferenceStatus from "../Context";
 import SideBar from "./SideBar";
@@ -17,9 +17,8 @@ interface IScroll {
 const Menu: FC<IScroll> = ({ scrolled }) => {
   const { t, i18n } = useTranslation();
   const { language, changeLanguage, modal, toggleModal, darkMode, toggleDarkMode } = usePreferenceStatus();
-
-  //test
   const [dropdown, setDropdown] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   //change language choice, update state in context and update local storage
   const handleLanguageChange = (lang: string): void => {
@@ -37,6 +36,19 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
+
+  //click anywhere outside the dropdown menu to close it
+  useEffect(() => {
+    const handleDropdown = (event: MouseEvent) => {
+      if (!dropdownRef.current?.contains(event.target as HTMLElement)) {
+        setDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleDropdown);
+
+    return () => document.removeEventListener("mousedown", handleDropdown);
+  });
 
   //toggle dark mode, update context and local storage
   const handleDarkMode = (): void => {
@@ -56,6 +68,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       }`}
     >
       <div>
+        {/* toggleModal on p tag - to goggle hamburger menu when media query is activated */}
         <Link to="home" spy={true} smooth={true} offset={-30} duration={500}>
           <p onClick={() => toggleModal(modal)} className="cursor-pointer">
             {t("home")}
@@ -85,6 +98,7 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
       </div>
 
       {/* language select */}
+
       {/* <div>
         <label htmlFor="lang-select">{t("language")} : </label>
         <select
@@ -102,14 +116,14 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
         <p>{t("language")} : </p>
         <div className="relative">
           <button
-            onClick={() => setDropdown(!dropdown)}
+            onClick={() => setDropdown((prev) => !prev)}
             className="border-b w-24 border-black dark:border-bgColor flex justify-between pl-1"
           >
             {language === "fr" ? "Français" : "English"}
             <img src={darkMode === "true" ? arrowDownWhite : arrowDownBlack} alt="Downward arrow" />
           </button>
           {dropdown && (
-            <div className="absolute flex flex-col text-center top-7 z-40">
+            <div ref={dropdownRef} className="absolute flex flex-col text-center top-7 z-40">
               <div
                 className={`language__dropdown--elements ${
                   language === "fr"
