@@ -37,6 +37,14 @@ const Menu: FC<IScroll> = ({ scrolled }) => {
     setDropdown(false);
   };
 
+  useEffect(() => {
+    if (language === "en") {
+      document.title = "Jade Fredenucci - Full-Stack Developer";
+    } else {
+      document.title = "Jade Fredenucci - Développeuse Full-Stack";
+    }
+  }, [language]);
+
   //add or remove dark mode class once loaded
   useEffect(() => {
     if (darkMode === "true") {
