@@ -1,25 +1,24 @@
 import { FC } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-//components
-import Header from "./components/Header";
-import Intro from "./components/Intro";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
+//pages
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 const App: FC = () => {
   console.log("app rendered");
 
   return (
     <>
-      <div id="home"></div>
-      <Header />
-      <div className="w-10/12 mx-auto">
-        <Intro />
-        <Projects />
-        <Skills />
-        <Contact />
-      </div>
+      <Router>
+        <Routes>
+          {/* index page */}
+          <Route path="/" element={<Home />} />
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </>
   );
 };
